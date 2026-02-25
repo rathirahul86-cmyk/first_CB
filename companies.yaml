@@ -1,0 +1,231 @@
+# Target companies for TPM job scanning
+# ATS types: greenhouse | lever | ashby | workday | amazon | custom
+# Priority: high | medium | low
+
+companies:
+
+  # ── MEGA-CAP PUBLIC (>$1T) ─────────────────────────────────────────────────
+
+  - name: NVIDIA
+    ticker: NVDA
+    market_cap: "4.8T"
+    ats: workday
+    career_url: https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite
+    workday_id: nvidia
+    priority: high
+    notes: GPU infrastructure, heavy on TPM for data center / supply chain
+
+  - name: Apple
+    ticker: AAPL
+    market_cap: "4.0T"
+    ats: workday
+    career_url: https://jobs.apple.com
+    workday_id: apple
+    priority: high
+    notes: TPMs for hardware, silicon, AI/ML teams
+
+  - name: Alphabet
+    ticker: GOOGL
+    market_cap: "3.8T"
+    ats: workday
+    career_url: https://careers.google.com
+    workday_id: google
+    priority: high
+    notes: Large TPM org; look for "Technical Program Manager" not "PM"
+
+  - name: Microsoft
+    ticker: MSFT
+    market_cap: "3.0T"
+    ats: workday
+    career_url: https://careers.microsoft.com
+    workday_id: microsoft
+    priority: high
+    notes: Azure, Copilot, GitHub teams all hire TPMs aggressively
+
+  - name: Amazon
+    ticker: AMZN
+    market_cap: "2.4T"
+    ats: amazon
+    career_url: https://www.amazon.jobs
+    amazon_category: technical-program-management
+    priority: high
+    notes: Titles vary — search "TPM" and "Technical Program Manager"
+
+  - name: Meta
+    ticker: META
+    market_cap: "1.6T"
+    ats: workday
+    career_url: https://www.metacareers.com
+    workday_id: meta
+    priority: high
+    notes: Reality Labs, AI Infra, WhatsApp all have active TPM roles
+
+  - name: Tesla
+    ticker: TSLA
+    market_cap: "1.6T"
+    ats: workday
+    career_url: https://www.tesla.com/careers
+    workday_id: tesla
+    priority: medium
+    notes: TPM roles in Autopilot, Dojo, manufacturing infra
+
+  - name: TSMC
+    ticker: TSM
+    market_cap: "1.5T"
+    ats: custom
+    career_url: https://careers.tsmc.com
+    priority: low
+    notes: Mostly engineering; TPM roles rare and usually Taiwan-based
+
+  # ── LARGE-CAP PUBLIC ($100B–$1T) ──────────────────────────────────────────
+
+  - name: Oracle
+    ticker: ORCL
+    market_cap: "427B"
+    ats: taleo
+    career_url: https://careers.oracle.com
+    priority: medium
+    notes: Cloud infra (OCI) scaling fast; TPM roles for AI platform teams
+
+  - name: Palantir
+    ticker: PLTR
+    market_cap: "321B"
+    ats: lever
+    career_url: https://jobs.lever.co/palantir
+    lever_id: palantir
+    priority: high
+    notes: Titles often "Forward Deployed Engineer" but TPM roles exist
+
+  - name: IBM
+    ticker: IBM
+    market_cap: "223B"
+    ats: workday
+    career_url: https://www.ibm.com/careers
+    workday_id: ibm
+    priority: medium
+    notes: Watsonx, Red Hat, hybrid cloud — enterprise TPM roles
+
+  - name: Adobe
+    ticker: ADBE
+    market_cap: "107B"
+    ats: workday
+    career_url: https://careers.adobe.com
+    workday_id: adobe
+    priority: medium
+    notes: Firefly AI, Document Cloud — product-adjacent TPM roles
+
+  - name: CoreWeave
+    ticker: private (IPO pending)
+    market_cap: "52B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/coreweave
+    greenhouse_id: coreweave
+    priority: high
+    notes: GPU cloud scale-up; infra TPM roles growing fast
+
+  # ── PRIVATE AI LABS ────────────────────────────────────────────────────────
+
+  - name: OpenAI
+    ticker: private
+    market_cap: "~300B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/openai
+    greenhouse_id: openai
+    priority: high
+    notes: Small but growing ops/TPM function; very competitive
+
+  - name: xAI
+    ticker: private
+    market_cap: "~200B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/xai
+    greenhouse_id: xai
+    priority: medium
+    notes: Early-stage; TPM roles emerging as headcount grows
+
+  - name: Anthropic
+    ticker: private
+    market_cap: "~60B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/anthropic
+    greenhouse_id: anthropic
+    priority: high
+    notes: Fastest-growing AI lab by revenue; small but quality TPM roles
+
+  - name: Databricks
+    ticker: private
+    market_cap: "~62B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/databricks
+    greenhouse_id: databricks
+    priority: high
+    notes: Data + AI platform; strong TPM culture
+
+  - name: Scale AI
+    ticker: private
+    market_cap: "~14B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/scaleai
+    greenhouse_id: scaleai
+    priority: medium
+    notes: AI data labeling / government contracts; growing PM/TPM org
+
+  - name: Netflix
+    ticker: NFLX
+    market_cap: "400B"
+    ats: lever
+    career_url: https://jobs.lever.co/netflix
+    lever_id: netflix
+    priority: high
+    notes: Strong TPM culture; infra, data platform, and content engineering teams
+
+  - name: Stripe
+    ticker: private
+    market_cap: "~70B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/stripe
+    greenhouse_id: stripe
+    priority: high
+    notes: Payments infra scale; TPM roles across reliability, developer platform, ML
+
+  - name: Mistral
+    ticker: private
+    market_cap: "~6B"
+    ats: lever
+    career_url: https://jobs.lever.co/mistral
+    lever_id: mistral
+    priority: low
+    notes: EU-based, mostly research/eng; TPM roles limited for now
+
+  - name: Cohere
+    ticker: private
+    market_cap: "~5B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/cohere
+    greenhouse_id: cohere
+    priority: medium
+    notes: Enterprise LLMs; small TPM team but growing
+
+# ── SEARCH CONFIG ─────────────────────────────────────────────────────────────
+search:
+  keywords:
+    - "Technical Program Manager"
+    - "TPM"
+    - "Staff TPM"
+    - "Senior TPM"
+    - "Principal TPM"
+  exclude_keywords:
+    - "intern"
+    - "internship"
+    - "contractor"
+  locations:
+    - "San Francisco"
+    - "Seattle"
+    - "New York"
+    - "Remote"
+    - "Bay Area"
+  seniority:
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
