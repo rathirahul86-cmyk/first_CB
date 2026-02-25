@@ -128,11 +128,10 @@ companies:
   - name: OpenAI
     ticker: private
     market_cap: "~300B"
-    ats: greenhouse
-    career_url: https://boards.greenhouse.io/openai
-    greenhouse_id: openai
+    ats: custom
+    career_url: https://openai.com/careers
     priority: high
-    notes: Small but growing ops/TPM function; very competitive
+    notes: Uses Greenhouse but board slug unconfirmed — skipped until verified
 
   - name: xAI
     ticker: private
@@ -200,11 +199,10 @@ companies:
   - name: Cohere
     ticker: private
     market_cap: "~5B"
-    ats: greenhouse
-    career_url: https://boards.greenhouse.io/cohere
-    greenhouse_id: cohere
+    ats: custom
+    career_url: https://cohere.com/careers
     priority: medium
-    notes: Enterprise LLMs; small TPM team but growing
+    notes: ATS slug unconfirmed (404 on both greenhouse/lever) — skipped until verified
 
 # ── SEARCH CONFIG ─────────────────────────────────────────────────────────────
 search:

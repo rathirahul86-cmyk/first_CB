@@ -3,3 +3,7 @@ uploads/
 __pycache__/
 *.pyc
 .DS_Store
+
+# SQLite journal files (jobs_seen.db itself stays tracked)
+*.db-wal
+*.db-shm
