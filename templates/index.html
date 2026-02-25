@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --border:   #30363d;
+      --text:     #e6edf3;
+      --muted:    #8b949e;
+      --green:    #3fb950;
+      --red:      #f85149;
+      --accent:   #58a6ff;
+    }
+    body          { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; }
+    .card         { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+    .kpi-value    { font-size: 1.8rem; font-weight: 700; }
+    .kpi-label    { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .gain         { color: var(--green); }
+    .loss         { color: var(--red); }
+    .badge-sample { background: #30363d; color: var(--muted); font-size: .72rem; }
+    .table        { --bs-table-bg: transparent; --bs-table-striped-bg: rgba(255,255,255,.03); }
+    .table th     { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; border-color: var(--border); }
+    .table td     { border-color: var(--border); font-size: .88rem; vertical-align: middle; }
+    .symbol-badge { font-family: monospace; background: #21262d; padding: 2px 8px; border-radius: 6px; font-size: .82rem; }
+    .broker-pill  { font-size: .72rem; padding: 2px 8px; border-radius: 20px; }
+    .broker-fidelity { background: rgba(0,120,212,.18); color: #58a6ff; }
+    .broker-schwab   { background: rgba(63,185,80,.15); color: #3fb950; }
+    .broker-morgan   { background: rgba(248,81,73,.15); color: #f85149; }
+    .broker-imported { background: rgba(210,153,34,.15); color: #d2a734; }
+    .nav-brand    { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+    .upload-zone  { border: 2px dashed var(--border); border-radius: 12px; transition: border-color .2s; }
+    .upload-zone:hover { border-color: var(--accent); }
+    .chart-container { position: relative; }
+    @media (max-width: 768px) { .kpi-value { font-size: 1.4rem; } }
+
+    /* ── Persona toggle button ───────────────────────────────────────────── */
+    #modeToggle {
+      border-color: var(--border);
+      background: #21262d;
+      color: var(--muted);
+      transition: all .2s;
+    }
+    body.guest #modeToggle {
+      background: rgba(63,185,80,.12);
+      color: var(--green);
+      border-color: var(--green);
+    }
+    /* Persona badge in navbar */
+    .persona-badge {
+      font-size: .7rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .persona-admin { background: rgba(88,166,255,.15); color: var(--accent); }
+    .persona-guest { background: rgba(63,185,80,.15);  color: var(--green); }
+
+    /* ── Guest mode: blur all dollar values ─────────────────────────────── */
+    body.guest .dval {
+      filter: blur(7px);
+      user-select: none;
+      pointer-events: none;
+      transition: filter .25s;
+    }
+    /* Hover to peek (admin only — guest can't un-blur) */
+    body:not(.guest) .dval { transition: filter .25s; }
+
+    /* ── Guest mode: hide dollar columns in table ───────────────────────── */
+    body.guest .col-dollar     { display: none !important; }
+    body.guest .col-dollar-hd  { display: none !important; }
+  </style>
+</head>
+<!-- Restore saved persona before first paint -->
+<script>
+  if (localStorage.getItem('portfolioMode') === 'guest') {
+    document.documentElement.classList.add('pre-guest');
+  }
+</script>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar px-4 py-3" style="border-bottom:1px solid var(--border); background:var(--surface);">
+  <span class="nav-brand"><i class="bi bi-graph-up-arrow me-2"></i>Portfolio Dashboard</span>
+  <div class="d-flex align-items-center gap-2">
+    <!-- Persona badge -->
+    <span id="personaBadge" class="persona-badge persona-admin">Admin</span>
+
+    <!-- Persona toggle -->
+    <button id="modeToggle" class="btn btn-sm" onclick="toggleMode()" title="Switch view persona">
+      <i class="bi bi-eye-slash me-1"></i>Guest View
+    </button>
+
+    {% if is_sample %}
+      <span class="badge badge-sample"><i class="bi bi-info-circle me-1"></i>Sample Data</span>
+    {% else %}
+      <a href="/reset" class="btn btn-sm btn-outline-secondary">Reset to Sample</a>
+    {% endif %}
+    <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#uploadModal">
+      <i class="bi bi-upload me-1"></i>Import CSV
+    </button>
+  </div>
+</nav>
+
+<!-- Main -->
+<div class="container-fluid px-4 py-4">
+
+  <!-- KPI Cards -->
+  <div class="row g-3 mb-4">
+    <!-- Total Portfolio -->
+    <div class="col-6 col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label mb-1">Total Portfolio</div>
+        <div class="kpi-value"><span class="dval">${{ "{:,.0f}".format(summary.total_value) }}</span></div>
+        <div class="kpi-label mt-1 text-muted">across {{ summary.accounts | length }} accounts</div>
+      </div>
+    </div>
+    <!-- Total Gain / Loss -->
+    <div class="col-6 col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label mb-1">Total Gain / Loss</div>
+        <div class="kpi-value {{ 'gain' if summary.total_gain >= 0 else 'loss' }}">
+          <span class="dval">{{ "+" if summary.total_gain >= 0 else "" }}${{ "{:,.0f}".format(summary.total_gain) }}</span>
+        </div>
+        <div class="mt-1 {{ 'gain' if summary.total_gain >= 0 else 'loss' }}" style="font-size:.85rem;">
+          {{ "+" if summary.total_gain_pct >= 0 else "" }}{{ "{:.2f}".format(summary.total_gain_pct) }}% all time
+        </div>
+      </div>
+    </div>
+    <!-- Cost Basis -->
+    <div class="col-6 col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label mb-1">Cost Basis</div>
+        <div class="kpi-value"><span class="dval">${{ "{:,.0f}".format(summary.total_cost) }}</span></div>
+        <div class="kpi-label mt-1 text-muted">total invested</div>
+      </div>
+    </div>
+    <!-- Positions -->
+    <div class="col-6 col-md-3">
+      <div class="card p-3">
+        <div class="kpi-label mb-1">Positions</div>
+        <div class="kpi-value">{{ summary.num_positions }}</div>
+        <div class="kpi-label mt-1 text-muted">holdings tracked</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Row -->
+  <div class="row g-3 mb-4">
+    <!-- Account Breakdown -->
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <div class="kpi-label mb-3">Account Breakdown</div>
+        <div class="chart-container" style="height:220px;">
+          <canvas id="accountChart"></canvas>
+        </div>
+        <div class="mt-3">
+          {% for acc, val in summary.accounts.items() %}
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <span style="font-size:.82rem;">{{ acc }}</span>
+            <span style="font-size:.82rem; font-weight:600;">
+              <span class="dval">${{ "{:,.0f}".format(val) }}</span>
+              <span class="guest-pct" style="display:none; font-size:.78rem;">{{ "{:.1f}".format(val / summary.total_value * 100) }}%</span>
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Asset Allocation -->
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <div class="kpi-label mb-3">Asset Allocation</div>
+        <div class="chart-container" style="height:220px;">
+          <canvas id="allocationChart"></canvas>
+        </div>
+        <div class="mt-3">
+          {% for asset, val in summary.allocation.items() %}
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <span style="font-size:.82rem;">{{ asset }}</span>
+            <span style="font-size:.82rem; font-weight:600;">
+              {{ "{:.1f}".format(val / summary.total_value * 100) }}%
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- S&P 500 Comparison — all % already, no masking needed -->
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="kpi-label">vs S&amp;P 500 (1Y)</div>
+          <span id="sp500Status" class="badge badge-sample">Loading…</span>
+        </div>
+        <div class="chart-container" style="height:220px;">
+          <canvas id="sp500Chart"></canvas>
+        </div>
+        <div class="mt-3 d-flex gap-3">
+          <div>
+            <div class="kpi-label">Your Return</div>
+            <div class="{{ 'gain' if summary.total_gain_pct >= 0 else 'loss' }}" style="font-weight:700;">
+              {{ "+" if summary.total_gain_pct >= 0 else "" }}{{ "{:.2f}".format(summary.total_gain_pct) }}%
+            </div>
+          </div>
+          <div>
+            <div class="kpi-label">S&amp;P 500</div>
+            <div id="sp500Return" style="font-weight:700; color:var(--accent);">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Holdings by Stock (aggregated across accounts) -->
+  <div class="card p-3 mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="kpi-label">Holdings by Stock — Total Across All Accounts</div>
+      <div class="d-flex gap-2 align-items-center" id="holdingsChartLegend" style="font-size:.75rem; color:var(--muted);"></div>
+    </div>
+    <div style="position:relative; height:420px;">
+      <canvas id="holdingsBarChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Holdings Table -->
+  <div class="card p-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="kpi-label">All Holdings</div>
+      <input type="text" id="searchInput" class="form-control form-control-sm w-auto"
+             placeholder="Search symbol…" style="width:180px !important; background:var(--bg); border-color:var(--border); color:var(--text);" />
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover mb-0" id="holdingsTable">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Description</th>
+            <th>Account</th>
+            <th class="text-end">Qty</th>
+            <th class="text-end col-dollar-hd">Price</th>
+            <th class="text-end col-dollar-hd">Market Value</th>
+            <th class="text-end col-dollar-hd">Cost Basis</th>
+            <th class="text-end col-dollar-hd">Gain / Loss $</th>
+            <th class="text-end">Gain / Loss %</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for h in summary.holdings %}
+          <tr>
+            <td><span class="symbol-badge">{{ h.symbol }}</span></td>
+            <td style="max-width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="{{ h.description }}">{{ h.description }}</td>
+            <td>
+              {% set acc_lower = h.account | lower %}
+              {% if 'fidelity' in acc_lower %}
+                <span class="broker-pill broker-fidelity">{{ h.account }}</span>
+              {% elif 'schwab' in acc_lower %}
+                <span class="broker-pill broker-schwab">{{ h.account }}</span>
+              {% elif 'morgan' in acc_lower %}
+                <span class="broker-pill broker-morgan">{{ h.account }}</span>
+              {% else %}
+                <span class="broker-pill broker-imported">{{ h.account }}</span>
+              {% endif %}
+            </td>
+            <td class="text-end">{{ "{:,.3f}".format(h.quantity) }}</td>
+            <td class="text-end col-dollar">${{ "{:,.2f}".format(h.last_price) }}</td>
+            <td class="text-end col-dollar" style="font-weight:600;">${{ "{:,.2f}".format(h.market_value) }}</td>
+            <td class="text-end col-dollar">${{ "{:,.2f}".format(h.cost_basis) }}</td>
+            <td class="text-end col-dollar {{ 'gain' if h.gain_loss >= 0 else 'loss' }}">
+              {{ "+" if h.gain_loss >= 0 else "" }}${{ "{:,.2f}".format(h.gain_loss) }}
+            </td>
+            <td class="text-end {{ 'gain' if h.gain_loss_pct >= 0 else 'loss' }}">
+              {{ "+" if h.gain_loss_pct >= 0 else "" }}{{ "{:.2f}".format(h.gain_loss_pct) }}%
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- Upload Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background:var(--surface); border-color:var(--border);">
+      <div class="modal-header" style="border-color:var(--border);">
+        <h6 class="modal-title"><i class="bi bi-upload me-2"></i>Import Statements</h6>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="kpi-label d-block mb-2">Select Broker</label>
+            <div class="d-flex gap-2">
+              {% for broker in broker_folders.keys() %}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="broker" id="broker_{{ loop.index }}"
+                       value="{{ broker }}" {% if loop.first %}checked{% endif %}>
+                <label class="form-check-label" for="broker_{{ loop.index }}" style="font-size:.88rem;">
+                  {{ broker }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="upload-zone p-4 text-center mb-3" onclick="document.getElementById('fileInput').click()" style="cursor:pointer;">
+            <i class="bi bi-file-earmark-arrow-up" style="font-size:2rem; color:var(--muted);"></i>
+            <div class="mt-2" style="color:var(--muted); font-size:.88rem;">Click to select files</div>
+            <div style="font-size:.75rem; color:var(--muted);">Accepts CSV and PDF — annual statements or position exports</div>
+            <input type="file" id="fileInput" name="files" multiple accept=".csv,.pdf" class="d-none"
+                   onchange="updateFileList(this)" />
+          </div>
+          <div id="fileList" style="font-size:.82rem; color:var(--muted);"></div>
+          <div class="mt-3 p-3 rounded" style="background:#21262d; font-size:.78rem; color:var(--muted);">
+            <strong style="color:var(--text);">How to export from each broker:</strong>
+            <div class="row mt-2 g-2">
+              <div class="col-md-4">
+                <div style="color:#58a6ff; font-weight:600;">Fidelity</div>
+                Accounts &rarr; Positions &rarr; Download (CSV)<br/>
+                Or: Statements &rarr; Annual 2025 (PDF)
+              </div>
+              <div class="col-md-4">
+                <div style="color:#3fb950; font-weight:600;">Schwab</div>
+                Accounts &rarr; Positions &rarr; Export (CSV)<br/>
+                Or: Statements &rarr; Year-End (PDF)
+              </div>
+              <div class="col-md-4">
+                <div style="color:#f85149; font-weight:600;">Morgan Stanley</div>
+                Portfolio &rarr; Export to CSV<br/>
+                Or: Documents &rarr; Statements (PDF)
+              </div>
+            </div>
+          </div>
+          <div class="mt-3" id="loadedFiles"></div>
+        </div>
+        <div class="modal-footer" style="border-color:var(--border);">
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-sm btn-primary"><i class="bi bi-check2 me-1"></i>Save & Reload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ── Data from Flask ──────────────────────────────────────────────────────────
+const accountData     = {{ summary.accounts | tojson }};
+const allocData       = {{ summary.allocation | tojson }};
+const portfolioReturn = {{ summary.total_gain_pct }};
+const totalVal        = {{ summary.total_value }};
+const allHoldings     = {{ summary.holdings | tojson }};
+
+// ── Palette ──────────────────────────────────────────────────────────────────
+const COLORS = ["#58a6ff","#3fb950","#f85149","#d2a734","#bc8cff","#79c0ff","#56d364"];
+
+// ── Chart instances ───────────────────────────────────────────────────────────
+let accountChartInst = null;
+let allocChartInst   = null;
+
+// ── Persona helpers ───────────────────────────────────────────────────────────
+function isGuest() { return document.body.classList.contains('guest'); }
+
+function applyPersonaUI(guest) {
+  const btn    = document.getElementById('modeToggle');
+  const badge  = document.getElementById('personaBadge');
+  const pctEls = document.querySelectorAll('.guest-pct');
+
+  if (guest) {
+    btn.innerHTML   = '<i class="bi bi-eye me-1"></i>Admin View';
+    badge.textContent = 'Guest';
+    badge.className   = 'persona-badge persona-guest';
+    pctEls.forEach(el => el.style.display = '');
+  } else {
+    btn.innerHTML   = '<i class="bi bi-eye-slash me-1"></i>Guest View';
+    badge.textContent = 'Admin';
+    badge.className   = 'persona-badge persona-admin';
+    pctEls.forEach(el => el.style.display = 'none');
+  }
+}
+
+// Restore on load (body class set early via <script> at top for flash prevention)
+(function initPersona() {
+  const savedGuest = localStorage.getItem('portfolioMode') === 'guest';
+  if (savedGuest) document.body.classList.add('guest');
+  applyPersonaUI(savedGuest);
+})();
+
+// ── Account Breakdown Bar Chart ───────────────────────────────────────────────
+function rebuildAccountChart() {
+  if (accountChartInst) { accountChartInst.destroy(); accountChartInst = null; }
+  const guest      = isGuest();
+  const accountSum = Object.values(accountData).reduce((a, b) => a + b, 0);
+
+  accountChartInst = new Chart(document.getElementById("accountChart"), {
+    type: "bar",
+    data: {
+      labels: Object.keys(accountData),
+      datasets: [{
+        data: Object.values(accountData),
+        backgroundColor: COLORS.slice(0, Object.keys(accountData).length),
+        borderRadius: 6,
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => guest
+              ? " " + (ctx.parsed.x / accountSum * 100).toFixed(1) + "% of portfolio"
+              : " $" + ctx.parsed.x.toLocaleString()
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: "#30363d" },
+          ticks: {
+            color: "#8b949e",
+            callback: v => guest
+              ? (v / accountSum * 100).toFixed(0) + "%"
+              : "$" + (v / 1000).toFixed(0) + "k"
+          }
+        },
+        y: { grid: { display: false }, ticks: { color: "#e6edf3" } }
+      }
+    }
+  });
+}
+
+// ── Asset Allocation Donut ────────────────────────────────────────────────────
+function rebuildAllocChart() {
+  if (allocChartInst) { allocChartInst.destroy(); allocChartInst = null; }
+  const guest = isGuest();
+
+  allocChartInst = new Chart(document.getElementById("allocationChart"), {
+    type: "doughnut",
+    data: {
+      labels: Object.keys(allocData),
+      datasets: [{
+        data: Object.values(allocData),
+        backgroundColor: COLORS,
+        borderWidth: 2,
+        borderColor: "#161b22",
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: "68%",
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom",
+          labels: { color: "#8b949e", boxWidth: 12, font: { size: 11 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => guest
+              ? " " + (ctx.parsed / totalVal * 100).toFixed(1) + "%"
+              : " $" + ctx.parsed.toLocaleString()
+          }
+        }
+      }
+    }
+  });
+}
+
+// ── S&P 500 vs Portfolio Line Chart (always % — no masking needed) ───────────
+let sp500Chart;
+
+async function loadSP500() {
+  try {
+    const res  = await fetch("/api/sp500");
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    const sp500Final = data.values[data.values.length - 1];
+    document.getElementById("sp500Return").textContent =
+      (sp500Final >= 0 ? "+" : "") + sp500Final.toFixed(2) + "%";
+    document.getElementById("sp500Return").className =
+      sp500Final >= 0 ? "gain" : "loss";
+    document.getElementById("sp500Status").textContent = "Live";
+    document.getElementById("sp500Status").style.background = "#1a3a1f";
+    document.getElementById("sp500Status").style.color = "#3fb950";
+
+    const portfolioLine = data.dates.map(() => portfolioReturn);
+
+    sp500Chart = new Chart(document.getElementById("sp500Chart"), {
+      type: "line",
+      data: {
+        labels: data.dates,
+        datasets: [
+          {
+            label: "S&P 500",
+            data: data.values,
+            borderColor: "#58a6ff",
+            backgroundColor: "rgba(88,166,255,.08)",
+            borderWidth: 2,
+            pointRadius: 0,
+            fill: true,
+            tension: 0.3,
+          },
+          {
+            label: "Your Portfolio",
+            data: portfolioLine,
+            borderColor: "#3fb950",
+            borderWidth: 2,
+            borderDash: [6, 4],
+            pointRadius: 0,
+            fill: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: { labels: { color: "#8b949e", boxWidth: 12, font: { size: 11 } } },
+          tooltip: { callbacks: { label: ctx => " " + ctx.dataset.label + ": " + (ctx.parsed.y >= 0 ? "+" : "") + ctx.parsed.y.toFixed(2) + "%" } }
+        },
+        scales: {
+          x: { display: false },
+          y: {
+            grid: { color: "#30363d" },
+            ticks: { color: "#8b949e", callback: v => (v >= 0 ? "+" : "") + v.toFixed(0) + "%" }
+          }
+        }
+      }
+    });
+  } catch (e) {
+    document.getElementById("sp500Status").textContent = "Offline";
+    console.warn("S&P 500 fetch failed:", e);
+  }
+}
+
+// ── Holdings Bar Chart (aggregated by symbol) ─────────────────────────────────
+const TYPE_COLORS = {
+  "Stock":       "#58a6ff",
+  "ETF":         "#3fb950",
+  "Mutual Fund": "#d2a734",
+  "Bond":        "#bc8cff",
+  "Cash":        "#8b949e",
+};
+
+let holdingsBarInst = null;
+
+function buildHoldingsData() {
+  // Aggregate market value + cost basis by symbol
+  const bySymbol = {};
+  allHoldings.forEach(h => {
+    if (h.symbol === "CASH") return;
+    if (!bySymbol[h.symbol]) {
+      bySymbol[h.symbol] = { mv: 0, cb: 0, type: h.type, desc: h.description };
+    }
+    bySymbol[h.symbol].mv += h.market_value;
+    bySymbol[h.symbol].cb += h.cost_basis;
+    // If same symbol appears in multiple types, prefer the non-Cash one
+    if (h.type !== "Cash") bySymbol[h.symbol].type = h.type;
+  });
+
+  // Sort descending by market value
+  return Object.entries(bySymbol)
+    .sort((a, b) => b[1].mv - a[1].mv);
+}
+
+function rebuildHoldingsChart() {
+  if (holdingsBarInst) { holdingsBarInst.destroy(); holdingsBarInst = null; }
+  const guest   = isGuest();
+  const entries = buildHoldingsData();
+
+  const labels  = entries.map(([sym]) => sym);
+  const mvData  = entries.map(([, d]) => d.mv);
+  const cbData  = entries.map(([, d]) => d.cb);
+  const colors  = entries.map(([, d]) => TYPE_COLORS[d.type] || "#58a6ff");
+  const types   = entries.map(([, d]) => d.type);
+  const descs   = entries.map(([, d]) => d.desc);
+
+  // Gain/loss bar (overlay): positive = green, negative = red
+  const glData  = entries.map(([, d]) => d.mv - d.cb);
+  const glColors = glData.map(v => v >= 0
+    ? "rgba(63,185,80,.35)"
+    : "rgba(248,81,73,.35)");
+
+  holdingsBarInst = new Chart(document.getElementById("holdingsBarChart"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Market Value",
+          data: guest ? mvData.map(v => v / totalVal * 100) : mvData,
+          backgroundColor: colors,
+          borderRadius: 4,
+          borderWidth: 0,
+          order: 2,
+        },
+        {
+          label: "Cost Basis",
+          data: guest ? cbData.map(v => v / totalVal * 100) : cbData,
+          backgroundColor: "rgba(255,255,255,.08)",
+          borderColor: "rgba(255,255,255,.18)",
+          borderWidth: 1,
+          borderRadius: 4,
+          order: 3,
+        },
+        {
+          label: "Gain / Loss",
+          data: guest ? glData.map(v => v / totalVal * 100) : glData,
+          backgroundColor: glColors,
+          borderWidth: 0,
+          borderRadius: 2,
+          order: 1,
+        },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items) => {
+              const i = items[0].dataIndex;
+              return `${labels[i]}  ·  ${descs[i]}  ·  ${types[i]}`;
+            },
+            label: (ctx) => {
+              const raw = ctx.raw;
+              if (ctx.dataset.label === "Gain / Loss") {
+                return guest
+                  ? ` Gain/Loss: ${raw >= 0 ? "+" : ""}${raw.toFixed(2)}% of portfolio`
+                  : ` Gain/Loss: ${raw >= 0 ? "+" : ""}$${Math.abs(raw).toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+              }
+              return guest
+                ? ` ${ctx.dataset.label}: ${raw.toFixed(2)}% of portfolio`
+                : ` ${ctx.dataset.label}: $${raw.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: "#30363d" },
+          ticks: { color: "#e6edf3", font: { size: 11 }, maxRotation: 45 }
+        },
+        y: {
+          grid: { color: "#21262d" },
+          ticks: {
+            color: "#8b949e",
+            callback: v => guest
+              ? v.toFixed(1) + "%"
+              : "$" + (v >= 1000 ? (v/1000).toFixed(0) + "k" : v.toFixed(0))
+          }
+        }
+      }
+    }
+  });
+
+  // Build type legend
+  const seen = {};
+  const legendEl = document.getElementById("holdingsChartLegend");
+  legendEl.innerHTML = Object.entries(TYPE_COLORS)
+    .filter(([type]) => entries.some(([, d]) => d.type === type))
+    .map(([type, color]) =>
+      `<span style="display:inline-flex;align-items:center;gap:4px;margin-right:8px;">
+        <span style="width:10px;height:10px;border-radius:2px;background:${color};display:inline-block;"></span>${type}
+      </span>`
+    ).join("");
+}
+
+// Re-run when persona toggled
+function toggleMode() {
+  const guest = document.body.classList.toggle('guest');
+  localStorage.setItem('portfolioMode', guest ? 'guest' : 'admin');
+  applyPersonaUI(guest);
+  rebuildAccountChart();
+  rebuildAllocChart();
+  rebuildHoldingsChart();
+}
+
+// ── Init charts ───────────────────────────────────────────────────────────────
+rebuildAccountChart();
+rebuildAllocChart();
+rebuildHoldingsChart();
+loadSP500();
+
+// ── Table Search ──────────────────────────────────────────────────────────────
+document.getElementById("searchInput").addEventListener("input", function () {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll("#holdingsTable tbody tr").forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(q) ? "" : "none";
+  });
+});
+
+// ── File Upload Preview ───────────────────────────────────────────────────────
+function updateFileList(input) {
+  const list = document.getElementById("fileList");
+  list.innerHTML = Array.from(input.files).map(f => {
+    const icon = f.name.endsWith(".pdf") ? "bi-file-earmark-pdf text-danger" : "bi-file-earmark-spreadsheet text-success";
+    return `<div class="mb-1"><i class="bi ${icon} me-1"></i>${f.name}</div>`;
+  }).join("");
+}
+
+// ── Load already-saved files into modal ───────────────────────────────────────
+document.getElementById("uploadModal").addEventListener("show.bs.modal", async () => {
+  try {
+    const res  = await fetch("/api/files");
+    const data = await res.json();
+    const el   = document.getElementById("loadedFiles");
+    const entries = Object.entries(data).filter(([, files]) => files.length > 0);
+    if (!entries.length) { el.innerHTML = ""; return; }
+    el.innerHTML = `<div class="kpi-label mb-2">Already loaded</div>` +
+      entries.map(([broker, files]) =>
+        files.map(f => {
+          const icon = f.endsWith(".pdf") ? "bi-file-earmark-pdf text-danger" : "bi-file-earmark-spreadsheet text-success";
+          return `<div class="d-flex justify-content-between align-items-center mb-1" style="font-size:.82rem;">
+            <span><i class="bi ${icon} me-1"></i>${broker} / ${f}</span>
+            <a href="/clear/${encodeURIComponent(broker)}" class="text-danger" style="font-size:.75rem;" onclick="return confirm('Remove all ${broker} files?')">clear</a>
+          </div>`;
+        }).join("")
+      ).join("");
+  } catch {}
+});
+</script>
+</body>
+</html>
