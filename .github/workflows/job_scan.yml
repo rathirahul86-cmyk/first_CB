@@ -2,10 +2,9 @@
 # Runs twice daily and emails a digest of new TPM openings at AI companies.
 #
 # Required secrets (repo Settings → Secrets and variables → Actions):
-#   GMAIL_USER          your Gmail address (sender)
-#   GMAIL_APP_PASSWORD  Gmail App Password — generate at:
-#                       https://myaccount.google.com/apppasswords
-#   GMAIL_TO            recipient email address
+#   EMAIL_USER      your Outlook address (sender), e.g. rathir1@outlook.com
+#   EMAIL_PASSWORD  your Outlook account password (or app password if MFA enabled)
+#   EMAIL_TO        recipient email address
 #
 # DB persistence: jobs_seen.db is committed back to the repo after each run
 # so the dedup store survives across workflow runs. The commit uses [skip ci]
@@ -51,9 +50,9 @@ jobs:
 
       - name: Run job scanner
         env:
-          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          GMAIL_TO:           ${{ secrets.GMAIL_TO }}
+          EMAIL_USER:     ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_TO:       ${{ secrets.EMAIL_TO }}
         run: python -m job_agent.run --verbose
 
       - name: Commit updated jobs_seen.db

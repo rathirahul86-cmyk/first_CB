@@ -1,17 +1,15 @@
 """
-Gmail SMTP email notifier.
+Outlook SMTP email notifier.
 
 Sends an HTML digest (with plain-text fallback) listing all new TPM jobs
 found in the current run. Sends nothing if new_jobs is empty.
 
 Required environment variables:
-    GMAIL_USER          Your Gmail address (sender)
-    GMAIL_APP_PASSWORD  Gmail App Password — NOT your account password.
-                        Generate one at: https://myaccount.google.com/apppasswords
-                        (Requires 2FA to be enabled on your Google account)
-    GMAIL_TO            Recipient address (can be same as GMAIL_USER)
+    EMAIL_USER      Your Outlook address (sender), e.g. rathir1@outlook.com
+    EMAIL_PASSWORD  Your Outlook account password (or app password if MFA enabled)
+    EMAIL_TO        Recipient address
 
-SMTP: smtp.gmail.com:587 with STARTTLS
+SMTP: smtp-mail.outlook.com:587 with STARTTLS (personal @outlook.com / @hotmail.com)
 """
 
 import os
@@ -127,13 +125,13 @@ def send_digest(new_jobs: list[dict]) -> None:
         logger.info("No new jobs — skipping email.")
         return
 
-    gmail_user = os.environ.get("GMAIL_USER")
-    gmail_pass = os.environ.get("GMAIL_APP_PASSWORD")
-    gmail_to   = os.environ.get("GMAIL_TO")
+    email_user = os.environ.get("EMAIL_USER")
+    email_pass = os.environ.get("EMAIL_PASSWORD")
+    email_to   = os.environ.get("EMAIL_TO")
 
-    if not all([gmail_user, gmail_pass, gmail_to]):
+    if not all([email_user, email_pass, email_to]):
         raise EnvironmentError(
-            "Set GMAIL_USER, GMAIL_APP_PASSWORD, and GMAIL_TO to enable email notifications."
+            "Set EMAIL_USER, EMAIL_PASSWORD, and EMAIL_TO to enable email notifications."
         )
 
     run_time = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M")
@@ -141,17 +139,18 @@ def send_digest(new_jobs: list[dict]) -> None:
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
-    msg["From"]    = gmail_user
-    msg["To"]      = gmail_to
+    msg["From"]    = email_user
+    msg["To"]      = email_to
 
     # Plain text first (lower priority fallback), HTML second (preferred by clients)
     msg.attach(MIMEText(_render_plain(new_jobs, run_time), "plain"))
     msg.attach(MIMEText(_render_html(new_jobs, run_time),  "html"))
 
-    with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
+    # Outlook personal accounts: smtp-mail.outlook.com:587
+    with smtplib.SMTP("smtp-mail.outlook.com", 587) as smtp:
         smtp.ehlo()
         smtp.starttls()
-        smtp.login(gmail_user, gmail_pass)
-        smtp.sendmail(gmail_user, gmail_to, msg.as_string())
+        smtp.login(email_user, email_pass)
+        smtp.sendmail(email_user, email_to, msg.as_string())
 
-    logger.info("Digest sent: %d jobs → %s", len(new_jobs), gmail_to)
+    logger.info("Digest sent: %d jobs → %s", len(new_jobs), email_to)
