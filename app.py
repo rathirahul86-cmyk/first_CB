@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
-import os, io, re
+import os, io, re, json
 
 try:
     import pdfplumber
@@ -687,6 +687,16 @@ def sp500():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route("/jobs")
+def jobs():
+    results_path = os.path.join(os.path.dirname(__file__), "job_agent", "results.json")
+    if not os.path.exists(results_path):
+        data = None
+    else:
+        with open(results_path) as f:
+            data = json.load(f)
+    return render_template("jobs.html", data=data)
 
 @app.route("/api/files")
 def list_files():

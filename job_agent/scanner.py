@@ -11,9 +11,11 @@ Flow:
   7. Return a summary dict for the CLI to print
 """
 
+import json
 import logging
 import os
 import yaml
+from datetime import datetime, timezone
 from typing import Optional
 
 from .fetchers.greenhouse import fetch_greenhouse_jobs
@@ -22,6 +24,35 @@ from .fetchers.workday    import fetch_workday_jobs
 from .db                  import init_db, is_seen, mark_seen_batch
 from .filter              import filter_jobs
 from .notifier            import send_digest
+
+_RESULTS_PATH = os.path.join(os.path.dirname(__file__), "results.json")
+
+
+def _write_results(filtered: list, new_job_ids: set, errors: list, total_fetched: int) -> None:
+    """Write current scan results to results.json for the dashboard to read."""
+    jobs_out = []
+    for j in filtered:
+        jobs_out.append({
+            "id":        j["id"],
+            "title":     j["title"],
+            "company":   j["company"],
+            "location":  j.get("location") or "",
+            "url":       j["url"],
+            "source":    j.get("source", ""),
+            "is_new":    j["id"] in new_job_ids,
+        })
+
+    payload = {
+        "last_scan":     datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "total_fetched": total_fetched,
+        "total_matched": len(filtered),
+        "new_count":     len(new_job_ids),
+        "errors":        errors,
+        "jobs":          jobs_out,
+    }
+    with open(_RESULTS_PATH, "w") as f:
+        json.dump(payload, f, indent=2)
+    logger.info("Results written to %s", _RESULTS_PATH)
 
 logger = logging.getLogger(__name__)
 
@@ -109,11 +140,13 @@ def run_scan(
     filtered = filter_jobs(all_jobs, search)
     logger.info("After filter: %d jobs match criteria", len(filtered))
 
-    new_jobs = [j for j in filtered if not is_seen(j["id"], db_path)]
+    new_jobs    = [j for j in filtered if not is_seen(j["id"], db_path)]
+    new_job_ids = {j["id"] for j in new_jobs}
     logger.info("New (unseen) jobs: %d", len(new_jobs))
 
     if dry_run:
         logger.info("[DRY RUN] Would notify %d jobs. No DB writes or email.", len(new_jobs))
+        _write_results(filtered, new_job_ids, errors, len(all_jobs))
         return {
             "total_fetched":  len(all_jobs),
             "total_filtered": len(filtered),
@@ -124,6 +157,9 @@ def run_scan(
 
     if new_jobs:
         mark_seen_batch(new_jobs, db_path)
+
+    # Write results.json for the dashboard
+    _write_results(filtered, new_job_ids, errors, len(all_jobs))
 
     try:
         send_digest(new_jobs)

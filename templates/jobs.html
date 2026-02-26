@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TPM Jobs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:      #0d1117;
+      --surface: #161b22;
+      --border:  #30363d;
+      --text:    #e6edf3;
+      --muted:   #8b949e;
+      --green:   #3fb950;
+      --accent:  #58a6ff;
+    }
+    body        { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; }
+    .nav-brand  { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+    .card       { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+
+    /* Company header row */
+    .company-hd {
+      background: #1c2128;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .company-count {
+      font-size: .75rem;
+      background: #30363d;
+      color: var(--muted);
+      padding: 1px 8px;
+      border-radius: 20px;
+    }
+
+    /* Job rows */
+    .job-row {
+      padding: 12px 16px;
+      border-bottom: 1px solid #21262d;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: background .15s;
+    }
+    .job-row:last-child { border-bottom: none; }
+    .job-row:hover { background: rgba(255,255,255,.03); }
+
+    .job-title a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .92rem;
+      font-weight: 500;
+    }
+    .job-title a:hover { color: var(--accent); }
+
+    .job-meta {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* NEW badge */
+    .badge-new {
+      font-size: .68rem;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: rgba(63,185,80,.15);
+      color: var(--green);
+      border: 1px solid rgba(63,185,80,.3);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Source pill */
+    .source-pill {
+      font-size: .68rem;
+      padding: 1px 7px;
+      border-radius: 20px;
+      background: rgba(88,166,255,.12);
+      color: var(--accent);
+    }
+
+    /* Stats bar */
+    .stat-item { text-align: center; }
+    .stat-val  { font-size: 1.6rem; font-weight: 700; }
+    .stat-lbl  { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* Filter bar */
+    .filter-bar input, .filter-bar select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: .85rem;
+    }
+    .filter-bar input:focus, .filter-bar select:focus {
+      background: var(--surface);
+      border-color: var(--accent);
+      color: var(--text);
+      box-shadow: none;
+    }
+    .filter-bar select option { background: #1c2128; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+    }
+    .empty-state i { font-size: 3rem; margin-bottom: 16px; display: block; }
+
+    /* Apply button */
+    .btn-apply {
+      font-size: .75rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-apply:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar px-4 py-3" style="border-bottom:1px solid var(--border); background:var(--surface);">
+  <div class="d-flex align-items-center gap-3">
+    <a href="/" class="nav-brand text-decoration-none">
+      <i class="bi bi-graph-up-arrow me-2"></i>Portfolio Dashboard
+    </a>
+    <a href="/jobs" class="btn btn-sm" style="background:rgba(88,166,255,.12);color:var(--accent);border-color:var(--accent);">
+      <i class="bi bi-briefcase me-1"></i>Jobs
+    </a>
+  </div>
+  <div class="d-flex align-items-center gap-2">
+    <span style="font-size:.8rem;color:var(--muted);">
+      {% if data %}
+        Last scan: {{ data.last_scan }}
+      {% else %}
+        No scan results yet
+      {% endif %}
+    </span>
+  </div>
+</nav>
+
+<div class="container-fluid px-4 py-4" style="max-width:960px;">
+
+  {% if not data %}
+  <!-- No results yet -->
+  <div class="empty-state">
+    <i class="bi bi-radar"></i>
+    <h5>No scan results yet</h5>
+    <p class="mb-4">Run the scanner to populate this page.</p>
+    <code style="background:var(--surface);padding:10px 16px;border-radius:8px;font-size:.85rem;border:1px solid var(--border);">
+      DB_PATH=job_agent/jobs_seen.db python -m job_agent.run
+    </code>
+  </div>
+
+  {% else %}
+
+  <!-- Stats bar -->
+  <div class="card p-4 mb-4">
+    <div class="row text-center g-0">
+      <div class="col stat-item">
+        <div class="stat-val" style="color:var(--accent);">{{ data.total_matched }}</div>
+        <div class="stat-lbl">Open Roles</div>
+      </div>
+      <div class="col stat-item">
+        <div class="stat-val" style="color:var(--green);">{{ data.new_count }}</div>
+        <div class="stat-lbl">New This Scan</div>
+      </div>
+      <div class="col stat-item">
+        <div class="stat-val">{{ data.jobs | map(attribute='company') | unique | list | length }}</div>
+        <div class="stat-lbl">Companies</div>
+      </div>
+      <div class="col stat-item">
+        <div class="stat-val" style="color:var(--muted);">{{ data.total_fetched }}</div>
+        <div class="stat-lbl">Total Fetched</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar d-flex gap-2 mb-3">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search title or company…" oninput="applyFilters()">
+    <select id="companyFilter" class="form-select" style="max-width:200px;" onchange="applyFilters()">
+      <option value="">All companies</option>
+      {% set companies = data.jobs | map(attribute='company') | unique | sort %}
+      {% for c in companies %}
+      <option value="{{ c }}">{{ c }}</option>
+      {% endfor %}
+    </select>
+    <select id="newFilter" class="form-select" style="max-width:150px;" onchange="applyFilters()">
+      <option value="">All roles</option>
+      <option value="new">New only</option>
+    </select>
+  </div>
+
+  <!-- Jobs grouped by company -->
+  <div id="jobList">
+    {% set ns = namespace(current_company='') %}
+    {% for job in data.jobs | sort(attribute='company') %}
+
+      {% if job.company != ns.current_company %}
+        {% if ns.current_company != '' %}</div></div>{% endif %}
+        {% set ns.current_company = job.company %}
+        {% set company_jobs = data.jobs | selectattr('company','equalto', job.company) | list %}
+        <div class="card mb-3 company-block" data-company="{{ job.company }}">
+          <div class="company-hd">
+            <i class="bi bi-building" style="color:var(--muted);"></i>
+            {{ job.company }}
+            <span class="company-count">{{ company_jobs | length }} role(s)</span>
+          </div>
+          <div>
+      {% endif %}
+
+      <div class="job-row" data-title="{{ job.title | lower }}" data-company="{{ job.company }}" data-new="{{ 'true' if job.is_new else 'false' }}">
+        <div class="flex-grow-1">
+          <div class="job-title">
+            <a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.title }}</a>
+          </div>
+          <div class="job-meta">
+            {% if job.location %}<i class="bi bi-geo-alt me-1"></i>{{ job.location }} &nbsp;·&nbsp; {% endif %}
+            <span class="source-pill">{{ job.source }}</span>
+          </div>
+        </div>
+        {% if job.is_new %}
+          <span class="badge-new"><i class="bi bi-stars me-1"></i>NEW</span>
+        {% endif %}
+        <a href="{{ job.url }}" target="_blank" rel="noopener" class="btn-apply">Apply →</a>
+      </div>
+
+    {% endfor %}
+    {% if data.jobs %}</div></div>{% endif %}
+  </div>
+
+  <!-- No results after filter -->
+  <div id="noResults" class="empty-state" style="display:none;">
+    <i class="bi bi-search"></i>
+    <h6>No roles match your filter</h6>
+  </div>
+
+  {% endif %}
+</div>
+
+<script>
+function applyFilters() {
+  const search  = document.getElementById('searchInput').value.toLowerCase();
+  const company = document.getElementById('companyFilter').value;
+  const newOnly = document.getElementById('newFilter').value === 'new';
+
+  const rows = document.querySelectorAll('.job-row');
+  let visible = 0;
+
+  rows.forEach(row => {
+    const titleMatch   = !search  || row.dataset.title.includes(search);
+    const companyMatch = !company || row.dataset.company === company;
+    const newMatch     = !newOnly || row.dataset.new === 'true';
+    const show = titleMatch && companyMatch && newMatch;
+    row.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  // Hide company blocks that have no visible rows
+  document.querySelectorAll('.company-block').forEach(block => {
+    const hasVisible = [...block.querySelectorAll('.job-row')]
+      .some(r => r.style.display !== 'none');
+    block.style.display = hasVisible ? '' : 'none';
+  });
+
+  document.getElementById('noResults').style.display = visible === 0 ? '' : 'none';
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
