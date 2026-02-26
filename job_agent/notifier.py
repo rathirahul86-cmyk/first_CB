@@ -1,15 +1,16 @@
 """
-Outlook SMTP email notifier.
+Gmail SMTP email notifier.
 
 Sends an HTML digest (with plain-text fallback) listing all new TPM jobs
 found in the current run. Sends nothing if new_jobs is empty.
 
 Required environment variables:
-    EMAIL_USER      Your Outlook address (sender), e.g. rathir1@outlook.com
-    EMAIL_PASSWORD  Your Outlook account password (or app password if MFA enabled)
-    EMAIL_TO        Recipient address
+    EMAIL_USER      Your Gmail address (sender), e.g. rathi.rahul86@gmail.com
+    EMAIL_PASSWORD  Gmail App Password (NOT your account password)
+                    Generate at: https://myaccount.google.com/apppasswords
+    EMAIL_TO        Recipient address (can be any email)
 
-SMTP: smtp-mail.outlook.com:587 with STARTTLS (personal @outlook.com / @hotmail.com)
+SMTP: smtp.gmail.com:587 with STARTTLS
 """
 
 import os
@@ -146,8 +147,7 @@ def send_digest(new_jobs: list[dict]) -> None:
     msg.attach(MIMEText(_render_plain(new_jobs, run_time), "plain"))
     msg.attach(MIMEText(_render_html(new_jobs, run_time),  "html"))
 
-    # Outlook personal accounts: smtp-mail.outlook.com:587
-    with smtplib.SMTP("smtp-mail.outlook.com", 587) as smtp:
+    with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
         smtp.ehlo()
         smtp.starttls()
         smtp.login(email_user, email_pass)
