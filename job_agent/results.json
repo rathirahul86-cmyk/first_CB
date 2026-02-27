@@ -1,12 +1,20 @@
 {
-  "last_scan": "2026-02-26 21:44 UTC",
-  "total_fetched": 3495,
-  "total_matched": 33,
-  "new_count": 9,
-  "errors": [
-    "Anduril (greenhouse): ReadTimeout: HTTPSConnectionPool(host='boards-api.greenhouse.io', port=443): Read timed out. (read timeout=15)"
-  ],
+  "last_scan": "2026-02-27 00:14 UTC",
+  "total_fetched": 6097,
+  "total_matched": 73,
+  "new_count": 49,
+  "errors": [],
   "jobs": [
+    {
+      "id": "greenhouse::databricks::8023728002",
+      "title": "Sr. Staff Technical Program Manager - GenAI",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8023728002",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 70
+    },
     {
       "id": "greenhouse::anthropic::5111783008",
       "title": "Technical Program Manager, Infrastructure",
@@ -28,6 +36,26 @@
       "match_score": 53
     },
     {
+      "id": "greenhouse::waymo::7580733",
+      "title": "Technical Program Manager, ML Developer Experience and Infrastructure Reliability",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7580733",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 53
+    },
+    {
+      "id": "greenhouse::databricks::8381772002",
+      "title": "Staff Technical Program Manager \u2013 GenAI Ops & Capacity Planning",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8381772002",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 50
+    },
+    {
       "id": "greenhouse::databricks::8381771002",
       "title": "Staff Technical Program Manager \u2013 GenAI Ops & Capacity Planning",
       "company": "Databricks",
@@ -36,6 +64,26 @@
       "source": "greenhouse",
       "is_new": false,
       "match_score": 50
+    },
+    {
+      "id": "greenhouse::gleanwork::4628714005",
+      "title": "Senior Technical Program Manager, Infrastructure  (TPM)",
+      "company": "Glean",
+      "location": "Palo Alto, CA",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4628714005",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 49
+    },
+    {
+      "id": "greenhouse::waymo::7403855",
+      "title": "Technical Program Manager, Onboard Systems",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7403855",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 47
     },
     {
       "id": "greenhouse::anthropic::5112640008",
@@ -128,6 +176,36 @@
       "match_score": 34
     },
     {
+      "id": "greenhouse::gleanwork::4657199005",
+      "title": "Technical Program Manager, Connectors (TPM)",
+      "company": "Glean",
+      "location": "Palo Alto, CA",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4657199005",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 34
+    },
+    {
+      "id": "greenhouse::coreweave::4617135006",
+      "title": "IaaS Platform Technical Program Manager",
+      "company": "CoreWeave",
+      "location": " Sunnyvale, CA",
+      "url": "https://coreweave.com/careers/job?4617135006&board=coreweave&gh_jid=4617135006",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 31
+    },
+    {
+      "id": "greenhouse::gleanwork::4657161005",
+      "title": "Senior Technical Program Manager, Billing  (TPM)",
+      "company": "Glean",
+      "location": "Palo Alto, CA",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4657161005",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 29
+    },
+    {
       "id": "greenhouse::anthropic::5078403008",
       "title": "Technical Program Manager, Enterprise Readiness",
       "company": "Anthropic",
@@ -135,6 +213,16 @@
       "url": "https://job-boards.greenhouse.io/anthropic/jobs/5078403008",
       "source": "greenhouse",
       "is_new": false,
+      "match_score": 27
+    },
+    {
+      "id": "greenhouse::databricks::8289827002",
+      "title": "Staff Technical Program Manager, Streaming Engineering",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8289827002",
+      "source": "greenhouse",
+      "is_new": true,
       "match_score": 27
     },
     {
@@ -218,6 +306,26 @@
       "match_score": 24
     },
     {
+      "id": "greenhouse::gleanwork::4628879005",
+      "title": "Senior Technical Program Manager (TPM)",
+      "company": "Glean",
+      "location": "Palo Alto, CA",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4628879005",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 22
+    },
+    {
+      "id": "greenhouse::andurilindustries::5002763007",
+      "title": "Senior Technical Program Manager,  Connected Warfare (Active Clearance)",
+      "company": "Anduril",
+      "location": "Seattle, Washington, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5002763007?gh_jid=5002763007",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 21
+    },
+    {
       "id": "greenhouse::waymo::7460680",
       "title": "Senior Technical Program Manager, SRE & Oncall Excellence",
       "company": "Waymo",
@@ -278,6 +386,26 @@
       "match_score": 19
     },
     {
+      "id": "greenhouse::waymo::7141355",
+      "title": "Software Technical Program Manager ",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA ",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7141355",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 19
+    },
+    {
+      "id": "greenhouse::waymo::7403693",
+      "title": "Technical Program Manager, Commercialization",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7403693",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 19
+    },
+    {
       "id": "greenhouse::stripe::7296916",
       "title": "Technical Program Manager, Commerce Systems",
       "company": "Stripe",
@@ -318,6 +446,26 @@
       "match_score": 17
     },
     {
+      "id": "greenhouse::andurilindustries::5056404007",
+      "title": "Technical Program Manager, Connected Warfare",
+      "company": "Anduril",
+      "location": "Seattle, Washington, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5056404007?gh_jid=5056404007",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 16
+    },
+    {
+      "id": "workday::nvidia::Technical-Program-Manager---Autonomous-Vehicles_JR2005752",
+      "title": "Technical Program Manager - Autonomous Vehicles Simulation",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Technical-Program-Manager---Autonomous-Vehicles_JR2005752",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 12
+    },
+    {
       "id": "greenhouse::stripe::7417090",
       "title": "Technical Program Manager, Sandboxes",
       "company": "Stripe",
@@ -328,6 +476,136 @@
       "match_score": 10
     },
     {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---DGX-Cloud-Storage_JR2011905",
+      "title": "Senior Technical Program Manager - DGX Cloud Storage",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---DGX-Cloud-Storage_JR2011905",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 9
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---Silicon-Solutions_JR2011097",
+      "title": "Technical Program Manager \u2013 Silicon Solutions",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---Silicon-Solutions_JR2011097",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 8
+    },
+    {
+      "id": "workday::nvidia::Technical-Program-Manager---Silicon-Solutions_JR2013476",
+      "title": "Technical Program Manager \u2013 Silicon Solutions",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Technical-Program-Manager---Silicon-Solutions_JR2013476",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 8
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---Autonomous-Vehicles_JR2006010",
+      "title": "Senior Technical Program Manager - Autonomous Vehicles",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---Autonomous-Vehicles_JR2006010",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 8
+    },
+    {
+      "id": "workday::nvidia::Manager--Software-TPM---Server-Firmware-and-System-Software_JR2007277-1",
+      "title": "Manager, Software TPM - Server Firmware and System Software",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Manager--Software-TPM---Server-Firmware-and-System-Software_JR2007277-1",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 8
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager_JR2001810",
+      "title": "Senior Technical Program Manager",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager_JR2001810",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::nvidia::Technical-Program-Manager_JR2008900",
+      "title": "Technical Program Manager - Enterprise Software",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Technical-Program-Manager_JR2008900",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---VLSI_JR2013354",
+      "title": "Senior Technical Program Manager \u2013 VLSI",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---VLSI_JR2013354",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---VLSI_JR2013498",
+      "title": "Senior Technical Program Manager - VLSI",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---VLSI_JR2013498",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---System-Software_JR2005470",
+      "title": "Senior Technical Program Manager - System Software",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---System-Software_JR2005470",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---DFX-Engineering_JR2005925",
+      "title": "Senior Technical Program Manager \u2013 DFX Engineering",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---DFX-Engineering_JR2005925",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager---XR_JR2012604",
+      "title": "Senior Technical Program Manager - Physical AI/XR",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager---XR_JR2012604",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::nvidia::Senior-Technical-Program-Manager--Software-Compute-Platform_JR2006506-1",
+      "title": "Senior Technical Program Manager, Software Compute Platform",
+      "company": "NVIDIA",
+      "location": "US, CA, Santa Clara",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/job/US-CA-Santa-Clara/Senior-Technical-Program-Manager--Software-Compute-Platform_JR2006506-1",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
       "id": "lever::palantir::7eb0dedb-37ee-4175-b29f-10a9e4340076",
       "title": "Technical Program Manager (TPM)",
       "company": "Palantir",
@@ -336,6 +614,126 @@
       "source": "lever",
       "is_new": false,
       "match_score": 5
+    },
+    {
+      "id": "workday::adobe::Principal-Technical-Program-Manager--GenAI_R164926",
+      "title": "Principal Technical Program Manager, GenAI",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Principal-Technical-Program-Manager--GenAI_R164926",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::adobe::Principal-Technical-Program-Manager--GenAI-Foundry_R163725",
+      "title": "Principal Technical Program Manager, GenAI Foundry",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Principal-Technical-Program-Manager--GenAI-Foundry_R163725",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::adobe::Principal-Technical-Program-Manager--GenAI-Foundry_R164714",
+      "title": "Principal Technical Program Manager, GenAI Foundry",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Principal-Technical-Program-Manager--GenAI-Foundry_R164714",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::adobe::Principal-Technical-Program-Manager--Firefly-Boards_R164924",
+      "title": "Principal Technical Program Manager, Firefly Boards",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Principal-Technical-Program-Manager--Firefly-Boards_R164924",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::adobe::Engineering-Program-Manager-5_R161508",
+      "title": "Senior Technical Program Manager for GenAI UX | AI Assistant\u00a0",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Engineering-Program-Manager-5_R161508",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::adobe::Senior-Technical-Program-Manager-for-GenAI-UX---Brand-Concierge_R161242",
+      "title": "Senior Technical Program Manager for GenAI UX | Brand Concierge",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Senior-Technical-Program-Manager-for-GenAI-UX---Brand-Concierge_R161242",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 5
+    },
+    {
+      "id": "workday::adobe::Principal-Engineering-Program-Manager_R164770",
+      "title": "Principal Engineering Program Manager",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Principal-Engineering-Program-Manager_R164770",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 0
+    },
+    {
+      "id": "workday::adobe::Senior-Engineering-Program-Manager--GenAI_R163227-1",
+      "title": "Principal Engineering Program Manager -GenAI",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Senior-Engineering-Program-Manager--GenAI_R163227-1",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 0
+    },
+    {
+      "id": "workday::adobe::Principal-Engineering-Program-Manager_R163410",
+      "title": "Principal Engineering Program Manager",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Principal-Engineering-Program-Manager_R163410",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 0
+    },
+    {
+      "id": "workday::adobe::Engineering-Program-Manager_R159487-1",
+      "title": "Engineering Program Manager",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Engineering-Program-Manager_R159487-1",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 0
+    },
+    {
+      "id": "workday::adobe::Engineering-Program-Manager-5_R164096-1",
+      "title": "Engineering Program Manager 5",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Engineering-Program-Manager-5_R164096-1",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 0
+    },
+    {
+      "id": "workday::adobe::Principal-Engineering-Program-Manager_R162404",
+      "title": "Principal Engineering Program Manager",
+      "company": "Adobe",
+      "location": "San Jose",
+      "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/job/San-Jose/Principal-Engineering-Program-Manager_R162404",
+      "source": "workday",
+      "is_new": true,
+      "match_score": 0
     }
   ]
 }

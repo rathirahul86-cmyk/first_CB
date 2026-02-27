@@ -299,6 +299,7 @@ companies:
 search:
   keywords:
     - "Technical Program Manager"
+    - "Engineering Program Manager"
     - "TPM"
     - "Staff TPM"
     - "Senior TPM"
@@ -313,6 +314,11 @@ search:
     - "New York"
     - "Remote"
     - "Bay Area"
+    - "San Jose"
+    - "Santa Clara"
+    - "Sunnyvale"
+    - "Mountain View"
+    - "Palo Alto"
   seniority:
     - "Senior"
     - "Staff"
