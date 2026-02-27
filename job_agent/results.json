@@ -1,82 +1,12 @@
 {
-  "last_scan": "2026-02-26 18:01 UTC",
-  "total_fetched": 2841,
-  "total_matched": 24,
-  "new_count": 24,
-  "errors": [],
+  "last_scan": "2026-02-26 21:44 UTC",
+  "total_fetched": 3495,
+  "total_matched": 33,
+  "new_count": 9,
+  "errors": [
+    "Anduril (greenhouse): ReadTimeout: HTTPSConnectionPool(host='boards-api.greenhouse.io', port=443): Read timed out. (read timeout=15)"
+  ],
   "jobs": [
-    {
-      "id": "lever::palantir::7eb0dedb-37ee-4175-b29f-10a9e4340076",
-      "title": "Technical Program Manager (TPM)",
-      "company": "Palantir",
-      "location": "New York, NY",
-      "url": "https://jobs.lever.co/palantir/7eb0dedb-37ee-4175-b29f-10a9e4340076",
-      "source": "lever",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::coreweave::4645260006",
-      "title": "Fleet Reliability Technical Program Manager",
-      "company": "CoreWeave",
-      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA / Bellevue, WA",
-      "url": "https://coreweave.com/careers/job?4645260006&board=coreweave&gh_jid=4645260006",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::coreweave::4556342006",
-      "title": "Security Technical Program Manager",
-      "company": "CoreWeave",
-      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA",
-      "url": "https://coreweave.com/careers/job?4556342006&board=coreweave&gh_jid=4556342006",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::coreweave::4654110006",
-      "title": "Sr. Technical Program Manager, Capacity Delivery",
-      "company": "CoreWeave",
-      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA / Bellevue, WA",
-      "url": "https://coreweave.com/careers/job?4654110006&board=coreweave&gh_jid=4654110006",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::coreweave::4652337006",
-      "title": "Technical Program Manager (TPM) \u2013 SOX Compliance",
-      "company": "CoreWeave",
-      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA / Bellevue, WA",
-      "url": "https://coreweave.com/careers/job?4652337006&board=coreweave&gh_jid=4652337006",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5062968008",
-      "title": "Technical Program Manager, Consumer Engineering",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5062968008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5078403008",
-      "title": "Technical Program Manager, Enterprise Readiness",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5078403008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5107763008",
-      "title": "Technical Program Manager, Inference Performance",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5107763008",
-      "source": "greenhouse",
-      "is_new": true
-    },
     {
       "id": "greenhouse::anthropic::5111783008",
       "title": "Technical Program Manager, Infrastructure",
@@ -84,106 +14,8 @@
       "location": "San Francisco, CA | New York City, NY | Seattle, WA",
       "url": "https://job-boards.greenhouse.io/anthropic/jobs/5111783008",
       "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5062960008",
-      "title": "Technical Program Manager, Launches",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5062960008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5108854008",
-      "title": "Technical Program Manager, Marketing Technology",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5108854008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5108644008",
-      "title": "Technical Program Manager, Reliability Engineering",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5108644008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5114705008",
-      "title": "Technical Program Manager, Research",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5114705008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5123849008",
-      "title": "Technical Program Manager, Research - Multilingual AI",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5123849008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5108695008",
-      "title": "Technical Program Manager, Safeguards \u2013 Infrastructure & Evals",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5108695008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::4989788008",
-      "title": "Technical Program Manager, Security",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4989788008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5123769008",
-      "title": "Technical Program Manager, Security - Coordinated Vulnerability Disclosure",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5123769008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::anthropic::5112640008",
-      "title": "TPM Manager, Compute & Infrastructure",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5112640008",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::databricks::8341200002",
-      "title": "Sr. Staff Technical Program Manager - Reliability",
-      "company": "Databricks",
-      "location": "Bellevue, Washington; Mountain View, California; San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8341200002",
-      "source": "greenhouse",
-      "is_new": true
-    },
-    {
-      "id": "greenhouse::databricks::8381771002",
-      "title": "Staff Technical Program Manager \u2013 GenAI Ops & Capacity Planning",
-      "company": "Databricks",
-      "location": "Seattle, Washington",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8381771002",
-      "source": "greenhouse",
-      "is_new": true
+      "is_new": false,
+      "match_score": 59
     },
     {
       "id": "greenhouse::scaleai::4663997005",
@@ -192,16 +24,248 @@
       "location": "San Francisco, CA",
       "url": "https://job-boards.greenhouse.io/scaleai/jobs/4663997005",
       "source": "greenhouse",
-      "is_new": true
+      "is_new": false,
+      "match_score": 53
     },
     {
-      "id": "greenhouse::stripe::7296916",
-      "title": "Technical Program Manager, Commerce Systems",
-      "company": "Stripe",
-      "location": "Seattle, San Francisco, Remote in the US",
-      "url": "https://stripe.com/jobs/search?gh_jid=7296916",
+      "id": "greenhouse::databricks::8381771002",
+      "title": "Staff Technical Program Manager \u2013 GenAI Ops & Capacity Planning",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8381771002",
       "source": "greenhouse",
-      "is_new": true
+      "is_new": false,
+      "match_score": 50
+    },
+    {
+      "id": "greenhouse::anthropic::5112640008",
+      "title": "TPM Manager, Compute & Infrastructure",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5112640008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 40
+    },
+    {
+      "id": "greenhouse::anthropic::5114705008",
+      "title": "Technical Program Manager, Research",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5114705008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 39
+    },
+    {
+      "id": "greenhouse::anthropic::4989788008",
+      "title": "Technical Program Manager, Security",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4989788008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 39
+    },
+    {
+      "id": "greenhouse::anthropic::5108695008",
+      "title": "Technical Program Manager, Safeguards \u2013 Infrastructure & Evals",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5108695008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 38
+    },
+    {
+      "id": "greenhouse::anthropic::5123849008",
+      "title": "Technical Program Manager, Research - Multilingual AI",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5123849008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 36
+    },
+    {
+      "id": "greenhouse::anthropic::5107763008",
+      "title": "Technical Program Manager, Inference Performance",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5107763008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 35
+    },
+    {
+      "id": "greenhouse::coreweave::4654110006",
+      "title": "Sr. Technical Program Manager, Capacity Delivery",
+      "company": "CoreWeave",
+      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA / Bellevue, WA",
+      "url": "https://coreweave.com/careers/job?4654110006&board=coreweave&gh_jid=4654110006",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 34
+    },
+    {
+      "id": "greenhouse::anthropic::5108854008",
+      "title": "Technical Program Manager, Marketing Technology",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5108854008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 34
+    },
+    {
+      "id": "greenhouse::waymo::7403834",
+      "title": "Senior Technical Program Manager, Infrastructure",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7403834",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 34
+    },
+    {
+      "id": "greenhouse::anthropic::5078403008",
+      "title": "Technical Program Manager, Enterprise Readiness",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5078403008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 27
+    },
+    {
+      "id": "greenhouse::coreweave::4645260006",
+      "title": "Fleet Reliability Technical Program Manager",
+      "company": "CoreWeave",
+      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA / Bellevue, WA",
+      "url": "https://coreweave.com/careers/job?4645260006&board=coreweave&gh_jid=4645260006",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 26
+    },
+    {
+      "id": "greenhouse::anthropic::5123769008",
+      "title": "Technical Program Manager, Security - Coordinated Vulnerability Disclosure",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5123769008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 26
+    },
+    {
+      "id": "greenhouse::waymo::7403940",
+      "title": "Technical Program Manager, Trade Security",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7403940",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 26
+    },
+    {
+      "id": "greenhouse::coreweave::4556342006",
+      "title": "Security Technical Program Manager",
+      "company": "CoreWeave",
+      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA",
+      "url": "https://coreweave.com/careers/job?4556342006&board=coreweave&gh_jid=4556342006",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 24
+    },
+    {
+      "id": "greenhouse::anthropic::5108644008",
+      "title": "Technical Program Manager, Reliability Engineering",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5108644008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 24
+    },
+    {
+      "id": "greenhouse::waymo::7600766",
+      "title": "Staff Technical Program Manager, Simulation Infrastructure Resource Management ",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7600766",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 24
+    },
+    {
+      "id": "greenhouse::waymo::7442632",
+      "title": "Technical Program Manager, Compliance",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7442632",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 24
+    },
+    {
+      "id": "greenhouse::waymo::7442794",
+      "title": "Technical Program Manager, Safety Framework",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7442794",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 24
+    },
+    {
+      "id": "greenhouse::waymo::7460680",
+      "title": "Senior Technical Program Manager, SRE & Oncall Excellence",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7460680",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 21
+    },
+    {
+      "id": "greenhouse::anthropic::5062968008",
+      "title": "Technical Program Manager, Consumer Engineering",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5062968008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 20
+    },
+    {
+      "id": "greenhouse::anthropic::5062960008",
+      "title": "Technical Program Manager, Launches",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5062960008",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 20
+    },
+    {
+      "id": "greenhouse::coreweave::4652337006",
+      "title": "Technical Program Manager (TPM) \u2013 SOX Compliance",
+      "company": "CoreWeave",
+      "location": "Livingston, NJ / New York, NY / Sunnyvale, CA / Bellevue, WA",
+      "url": "https://coreweave.com/careers/job?4652337006&board=coreweave&gh_jid=4652337006",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 19
+    },
+    {
+      "id": "greenhouse::databricks::8341200002",
+      "title": "Sr. Staff Technical Program Manager - Reliability",
+      "company": "Databricks",
+      "location": "Bellevue, Washington; Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8341200002",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 19
     },
     {
       "id": "greenhouse::stripe::7594208",
@@ -210,7 +274,48 @@
       "location": "US-Remote; US-Chicago; US-Atlanta; CA-Toronto",
       "url": "https://stripe.com/jobs/search?gh_jid=7594208",
       "source": "greenhouse",
-      "is_new": true
+      "is_new": false,
+      "match_score": 19
+    },
+    {
+      "id": "greenhouse::stripe::7296916",
+      "title": "Technical Program Manager, Commerce Systems",
+      "company": "Stripe",
+      "location": "Seattle, San Francisco, Remote in the US",
+      "url": "https://stripe.com/jobs/search?gh_jid=7296916",
+      "source": "greenhouse",
+      "is_new": false,
+      "match_score": 17
+    },
+    {
+      "id": "greenhouse::waymo::7442109",
+      "title": "Senior Technical Program Manager, Autonomous Driving Performance Evaluation",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7442109",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 17
+    },
+    {
+      "id": "greenhouse::waymo::7442190",
+      "title": "Senior Technical Program Manager, Simulator",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7442190",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 17
+    },
+    {
+      "id": "greenhouse::waymo::7203759",
+      "title": "Technical Program Manager, Release",
+      "company": "Waymo",
+      "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+      "url": "https://careers.withwaymo.com/jobs?gh_jid=7203759",
+      "source": "greenhouse",
+      "is_new": true,
+      "match_score": 17
     },
     {
       "id": "greenhouse::stripe::7417090",
@@ -219,7 +324,18 @@
       "location": "Seattle, SF, NYC",
       "url": "https://stripe.com/jobs/search?gh_jid=7417090",
       "source": "greenhouse",
-      "is_new": true
+      "is_new": false,
+      "match_score": 10
+    },
+    {
+      "id": "lever::palantir::7eb0dedb-37ee-4175-b29f-10a9e4340076",
+      "title": "Technical Program Manager (TPM)",
+      "company": "Palantir",
+      "location": "New York, NY",
+      "url": "https://jobs.lever.co/palantir/7eb0dedb-37ee-4175-b29f-10a9e4340076",
+      "source": "lever",
+      "is_new": false,
+      "match_score": 5
     }
   ]
 }

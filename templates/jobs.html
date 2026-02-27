@@ -126,6 +126,21 @@
       flex-shrink: 0;
     }
     .btn-apply:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Match score badge */
+    .score-badge {
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-width: 44px;
+      text-align: center;
+    }
+    .score-high   { background: rgba(63,185,80,.18);  color: #3fb950; border: 1px solid rgba(63,185,80,.35); }
+    .score-medium { background: rgba(210,153,34,.18); color: #d4a417; border: 1px solid rgba(210,153,34,.35); }
+    .score-low    { background: rgba(139,148,158,.12); color: #8b949e; border: 1px solid rgba(139,148,158,.3); }
   </style>
 </head>
 <body>
@@ -189,7 +204,7 @@
   </div>
 
   <!-- Filter bar -->
-  <div class="filter-bar d-flex gap-2 mb-3">
+  <div class="filter-bar d-flex gap-2 mb-3 flex-wrap">
     <input type="text" id="searchInput" class="form-control" placeholder="Search title or company…" oninput="applyFilters()">
     <select id="companyFilter" class="form-select" style="max-width:200px;" onchange="applyFilters()">
       <option value="">All companies</option>
@@ -198,9 +213,14 @@
       <option value="{{ c }}">{{ c }}</option>
       {% endfor %}
     </select>
-    <select id="newFilter" class="form-select" style="max-width:150px;" onchange="applyFilters()">
+    <select id="newFilter" class="form-select" style="max-width:140px;" onchange="applyFilters()">
       <option value="">All roles</option>
       <option value="new">New only</option>
+    </select>
+    <select id="scoreFilter" class="form-select" style="max-width:155px;" onchange="applyFilters()">
+      <option value="">All matches</option>
+      <option value="high">Strong (50%+)</option>
+      <option value="medium">Good (35–49%)</option>
     </select>
   </div>
 
@@ -222,7 +242,19 @@
           <div>
       {% endif %}
 
-      <div class="job-row" data-title="{{ job.title | lower }}" data-company="{{ job.company }}" data-new="{{ 'true' if job.is_new else 'false' }}">
+      {% set score = job.match_score | default(0) %}
+      {% if score >= 50 %}
+        {% set score_class = "score-high" %}
+      {% elif score >= 35 %}
+        {% set score_class = "score-medium" %}
+      {% else %}
+        {% set score_class = "score-low" %}
+      {% endif %}
+      <div class="job-row"
+           data-title="{{ job.title | lower }}"
+           data-company="{{ job.company }}"
+           data-new="{{ 'true' if job.is_new else 'false' }}"
+           data-score="{{ score }}">
         <div class="flex-grow-1">
           <div class="job-title">
             <a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.title }}</a>
@@ -232,6 +264,7 @@
             <span class="source-pill">{{ job.source }}</span>
           </div>
         </div>
+        <span class="score-badge {{ score_class }}" title="Resume match score">{{ score }}%</span>
         {% if job.is_new %}
           <span class="badge-new"><i class="bi bi-stars me-1"></i>NEW</span>
         {% endif %}
@@ -253,18 +286,23 @@
 
 <script>
 function applyFilters() {
-  const search  = document.getElementById('searchInput').value.toLowerCase();
-  const company = document.getElementById('companyFilter').value;
-  const newOnly = document.getElementById('newFilter').value === 'new';
+  const search      = document.getElementById('searchInput').value.toLowerCase();
+  const company     = document.getElementById('companyFilter').value;
+  const newOnly     = document.getElementById('newFilter').value === 'new';
+  const scoreFilter = document.getElementById('scoreFilter').value;
 
   const rows = document.querySelectorAll('.job-row');
   let visible = 0;
 
   rows.forEach(row => {
-    const titleMatch   = !search  || row.dataset.title.includes(search);
-    const companyMatch = !company || row.dataset.company === company;
-    const newMatch     = !newOnly || row.dataset.new === 'true';
-    const show = titleMatch && companyMatch && newMatch;
+    const score = parseInt(row.dataset.score || '0', 10);
+    const titleMatch   = !search      || row.dataset.title.includes(search);
+    const companyMatch = !company     || row.dataset.company === company;
+    const newMatch     = !newOnly     || row.dataset.new === 'true';
+    const scoreMatch   = !scoreFilter
+                         || (scoreFilter === 'high'   && score >= 50)
+                         || (scoreFilter === 'medium' && score >= 35 && score < 50);
+    const show = titleMatch && companyMatch && newMatch && scoreMatch;
     row.style.display = show ? '' : 'none';
     if (show) visible++;
   });

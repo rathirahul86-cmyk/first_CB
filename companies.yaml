@@ -12,17 +12,17 @@ companies:
     ats: workday
     career_url: https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite
     workday_id: nvidia
+    workday_board: NVIDIAExternalCareerSite
     priority: high
     notes: GPU infrastructure, heavy on TPM for data center / supply chain
 
   - name: Apple
     ticker: AAPL
     market_cap: "4.0T"
-    ats: workday
-    career_url: https://jobs.apple.com
-    workday_id: apple
+    ats: custom
+    career_url: https://jobs.apple.com/en-us/search?q=Engineering+Program+Manager
     priority: high
-    notes: TPMs for hardware, silicon, AI/ML teams
+    notes: "Custom portal (jobs.apple.com) — search is JavaScript-only, no public API. Check URL manually for Engineering Program Manager / TPM roles."
 
   - name: Alphabet
     ticker: GOOGL
@@ -111,6 +111,7 @@ companies:
     ats: workday
     career_url: https://careers.adobe.com
     workday_id: adobe
+    workday_board: external_experienced
     priority: medium
     notes: Firefly AI, Document Cloud — product-adjacent TPM roles
 
@@ -203,6 +204,96 @@ companies:
     career_url: https://cohere.com/careers
     priority: medium
     notes: ATS slug unconfirmed (404 on both greenhouse/lever) — skipped until verified
+
+  # ── USER-ADDED COMPANIES ───────────────────────────────────────────────────
+
+  - name: Crusoe
+    ticker: private
+    market_cap: "~2.8B"
+    ats: custom
+    career_url: https://jobs.ashbyhq.com/Crusoe
+    priority: high
+    notes: Uses Ashby ATS (auth required, no public API); check career_url manually
+
+  - name: Google DeepMind
+    ticker: GOOGL
+    market_cap: "part of Alphabet"
+    ats: workday
+    career_url: https://deepmind.google/careers
+    workday_id: deepmind
+    priority: high
+    notes: Separate hiring from Google; research-heavy but TPM roles exist
+
+  - name: SpaceX
+    ticker: private
+    market_cap: "~350B"
+    ats: custom
+    career_url: https://www.spacex.com/careers
+    priority: high
+    notes: Custom ATS — no public API; Starlink and engineering programs have TPM roles
+
+  - name: Anduril
+    ticker: private
+    market_cap: "~28B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/andurilindustries
+    greenhouse_id: andurilindustries
+    priority: high
+    notes: Defense-AI; fast-growing TPM org across autonomy and software programs
+
+  - name: Waymo
+    ticker: private
+    market_cap: "~45B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/waymo
+    greenhouse_id: waymo
+    priority: high
+    notes: Autonomous vehicle AI; simulation compute and infrastructure TPM roles closely match Rahul's profile
+
+  # ── TOP AI STARTUPS (agent-selected) ──────────────────────────────────────
+
+  - name: Perplexity AI
+    ticker: private
+    market_cap: "~9B"
+    ats: custom
+    career_url: https://www.perplexity.ai/hub/careers
+    priority: high
+    notes: Custom ATS (Rippling); check career_url manually for TPM roles
+
+  - name: Groq
+    ticker: private
+    market_cap: "~2.8B"
+    ats: workday
+    career_url: https://groq.com/careers-at-groq
+    workday_id: groq
+    priority: high
+    notes: LPU inference chips; TPM roles in hardware and software programs (Workday ATS)
+
+  - name: Harvey AI
+    ticker: private
+    market_cap: "~3B"
+    ats: custom
+    career_url: https://www.harvey.ai/company#company-careers
+    priority: medium
+    notes: Small team; check career_url manually for TPM roles
+
+  - name: Glean
+    ticker: private
+    market_cap: "~4.6B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/gleanwork
+    greenhouse_id: gleanwork
+    priority: high
+    notes: Enterprise AI search; strong eng culture, active TPM hiring
+
+  - name: Together AI
+    ticker: private
+    market_cap: "~1.25B"
+    ats: greenhouse
+    career_url: https://boards.greenhouse.io/togetherai
+    greenhouse_id: togetherai
+    priority: medium
+    notes: Open-source model platform; TPM roles in infra and developer platform
 
 # ── SEARCH CONFIG ─────────────────────────────────────────────────────────────
 search:

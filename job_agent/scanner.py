@@ -24,22 +24,27 @@ from .fetchers.workday    import fetch_workday_jobs
 from .db                  import init_db, is_seen, mark_seen_batch
 from .filter              import filter_jobs
 from .notifier            import send_digest
+from .scorer              import score_jobs
 
 _RESULTS_PATH = os.path.join(os.path.dirname(__file__), "results.json")
 
 
 def _write_results(filtered: list, new_job_ids: set, errors: list, total_fetched: int) -> None:
     """Write current scan results to results.json for the dashboard to read."""
+    logger.info("Scoring %d jobs against resume profile…", len(filtered))
+    scored = score_jobs(filtered)
+
     jobs_out = []
-    for j in filtered:
+    for j in scored:
         jobs_out.append({
-            "id":        j["id"],
-            "title":     j["title"],
-            "company":   j["company"],
-            "location":  j.get("location") or "",
-            "url":       j["url"],
-            "source":    j.get("source", ""),
-            "is_new":    j["id"] in new_job_ids,
+            "id":          j["id"],
+            "title":       j["title"],
+            "company":     j["company"],
+            "location":    j.get("location") or "",
+            "url":         j["url"],
+            "source":      j.get("source", ""),
+            "is_new":      j["id"] in new_job_ids,
+            "match_score": j.get("match_score", 0),
         })
 
     payload = {
@@ -81,6 +86,7 @@ def _fetch(company: dict) -> tuple:
         elif ats == "workday":
             jobs = fetch_workday_jobs(
                 company.get("workday_id", ""),
+                company.get("workday_board", ""),
                 company.get("career_url", ""),
                 name,
             )

@@ -1,0 +1,67 @@
+Rahul Rathi
+rathi.r@yahoo.com | +1 213-422-0007 | San Jose, CA | http://www.linkedin.com/in/rathirahul
+
+ML Platform TPM with 12+ years of program management experience across data, compute and ML lifecycle platforms at
+scale supporting training, and production deployment of foundational and applied ML Systems.
+
+Technical Skills: High Performance Distributed Computing, ML Compute & Capacity, End to End MLOps, Data Platform &
+Infrastructure, Computer Vision, HW & SW System Integration, Perception & Image Sensor Systems, Multi modal Model
+Training, Data Collection & Data Annotation, SQL, Agile, Python, AI Agent Assisted Coding
+
+WORK EXPERIENCE
+
+AI Technical Program Manager, Microsoft AI, Mountain View, California  Jul 2025 – Present
+Drive cross-functional technical programs supporting generative AI model training and inference for Microsoft Super
+Intelligence Research, aligning infrastructure, and platform teams for frontier model development
+Lead end-to-end execution across the model lifecycle by defining compute requirements, capacity plans, and delivery
+milestones across Kubernetes and SLURM-based GPU clusters
+Established and tracked system-level metrics, baselines, and optimization goals to improve GPU utilization and workload
+efficiency, resulting in a 15% utilization increase through data-driven scheduling and allocation strategies
+Own program status, dependencies, and risks for mission-critical AI infrastructure initiatives, proactively identifying
+bottlenecks in GPU scheduling, queue health, and capacity availability and driving mitigation to ensure on-time delivery
+Partner with engineering teams to improve observability and operational readiness by leveraging telemetry and utilization
+signals to enable performance tracking, issue triage, and informed decision-making at scale
+
+Sr. Technical Program Manager, Data Systems, Meta Platforms, Burlingame, California  Aug 2022 – Apr 2025
+Led ML data platforms for Face/Eye Tracking and Codec Avatar technologies, supporting AI Research, Data Platform and
+Core Infrastructure teams across data acquisition, processing, and training stages reducing model iteration cycles by 27%
+Drove data pipeline re-architecture improvements across device telemetry, operational analytics and vendor performance
+management to increase data pipeline efficiency by 75% and delivering $5M in annual cost savings
+Owned HW/FW/OS bring-up programs for specialized AR/VR and Ground Truth systems, accelerating data acquisition by 25%
+Led data infrastructure initiatives, including Data Lake adoption, to build self-service data management platforms,
+establishing data quality, lineage and readiness metrics used by ML feature teams gating training and production runs
+
+Technical Program Manager, Meta Platforms, Menlo Park, California  Dec 2019 – Aug 2022
+Served as a Single Threaded Leader for Hand Tracking ML data programs across Quest 1 & Quest 2, managing $12M+ annual
+operations budget and supporting multiple model generations
+Enabled Object and Spatial Tracking model runs on Quest 2 by driving large scale real world, simulated and robotic data
+collection, aligning data requirements, and building data platform with engineering teams
+Partnered with platform engineering teams to build self serve data collection platforms including data device data
+collection, data contracts, improving data reuse and model teams onboarding for faster iteration
+
+Product Data Operations Specialist, Meta Platforms, Menlo Park, California  Sept 2017 – Dec 2019
+Scaled global annotation and data operations by 10x, enabling detection and measurement of fake and compromised accounts
+Built operational workflows and quality controls to support high stakes initiatives including US Elections Integrity,
+Statutory Compliance Reporting & Data Transparency reporting
+Partnered with Product, Data Science and ML engineering teams to translate policy and detection requirements into labeled
+datasets, improving model precision and recall for abuse detection systems
+
+Business Analyst, Genentech Inc., South San Francisco, California  Jun 2016 – Aug 2017
+Delivered Medical Affairs analytics dashboards; drove 20% reduction in compliance escalations
+
+Project Manager, Seven Lakes Technologies, Westlake Village, California  Nov 2015 – Jun 2016
+Reduced implementation timelines for workflow automation tools for offshore drilling clients
+
+Program Manager, CVS Health, Inc., Scottsdale, Arizona  Jun 2014 – Jun 2015
+Delivered $1M+ savings by planning and executing system & process improvements across Medicare Enrollment Ops
+
+Business Analyst, Tech Mahindra Limited, Noida, India  Mar 2011 – Jun 2012
+Led requirement gathering and QA for AT&T Retail Web platform, supporting iPhone 5 launch
+
+Systems Engineer, Infosys Technologies Limited, Pune, India  Jul 2008 – Feb 2011
+Developed backend SQL features for Finacle loan origination platform supporting EMEA Bank launches
+
+EDUCATION
+M.S., Managing Information Technology, Sullivan University, Kentucky  2015-2016
+M.B.A., Strategy & Finance, University of Iowa, Iowa  2012-2014
+B.Tech, Computer Engineering, Punjab Technical University, India  2004-2008
