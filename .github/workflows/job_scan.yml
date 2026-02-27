@@ -55,14 +55,14 @@ jobs:
           EMAIL_TO:       ${{ secrets.EMAIL_TO }}
         run: python -m job_agent.run --verbose
 
-      - name: Commit updated jobs_seen.db
+      - name: Commit updated scan artifacts
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add job_agent/jobs_seen.db
+          git add job_agent/jobs_seen.db job_agent/results.json
           if git diff --staged --quiet; then
-            echo "DB unchanged (no new jobs) — skipping commit."
+            echo "No changes — skipping commit."
           else
-            git commit -m "chore: update jobs_seen.db [skip ci]"
+            git commit -m "chore: update scan results [skip ci]"
             git push
           fi
