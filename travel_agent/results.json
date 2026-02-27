@@ -1,5 +1,5 @@
 {
-  "last_scan": "2026-02-27 00:59 UTC",
+  "last_scan": "2026-02-27 22:12 UTC",
   "trip_count": 2,
   "alert_count": 0,
   "trips": [
@@ -28,9 +28,9 @@
         "airline": "Emirates",
         "airline_code": "EK",
         "flight_number": "EK 515",
-        "url": "https://www.google.com/travel/flights?tfs=WyJDalJJTkdRMWVVSkxkV3R0T1c5QlFtVkVlRkZDUnkwdExTMHRMUzB0TFhCcVltTjZPRUZCUVVGQlIyMW5OMFV3UjFKRmJFVkJFZ3RGU3pVeE5YeEZTekl5TlJvTENMbmdGQkFDR2dOVlUwUTRISEM1NEJRPSIsW1siREVMIiwiMjAyNi0wNS0xNyIsIkRYQiIsbnVsbCwiRUsiLCI1MTUiXSxbIkRYQiIsIjIwMjYtMDUtMTgiLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
+        "url": "https://www.google.com/travel/flights?tfs=WyJDalJJY0hSWmRXVjNNR2cyYkd0QlJURjRSV2RDUnkwdExTMHRMUzB0TFMxMmQzSjBNa0ZCUVVGQlIyMXBSbkJSUkROQlF6SkJFZ3RGU3pVeE5YeEZTekl5TlJvTENOUGdGQkFDR2dOVlUwUTRISERUNEJRPSIsW1siREVMIiwiMjAyNi0wNS0xNyIsIkRYQiIsbnVsbCwiRUsiLCI1MTUiXSxbIkRYQiIsIjIwMjYtMDUtMTgiLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
         "source": "google_flights",
-        "scanned_at": "2026-02-27T00:58:53Z",
+        "scanned_at": "2026-02-27T22:12:39Z",
         "is_preferred": true
       },
       "candidates": [
@@ -48,9 +48,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJTm5Rd1EwOTFiVmxXWmpoQlFrRjBUa0ZDUnkwdExTMHRMUzB0TFMxdmEyVm5PVUZCUVVGQlIyMW5OMFYzUkhKU2RsVkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNS0xMCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDUtMTEiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJYWxkeVNuRmxXR3RHWHpoQlJYZG9TbmRDUnkwdExTMHRMUzB0TFMxdmEyeG1NMEZCUVVGQlIyMXBSbkJOU1V3d1UzTkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNS0xMCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDUtMTEiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:52Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -67,9 +67,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJTkdRMWVVSkxkV3R0T1c5QlFtVkVlRkZDUnkwdExTMHRMUzB0TFhCcVltTjZPRUZCUVVGQlIyMW5OMFV3UjFKRmJFVkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNS0xNyIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDUtMTgiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJY0hSWmRXVjNNR2cyYkd0QlJURjRSV2RDUnkwdExTMHRMUzB0TFMxMmQzSjBNa0ZCUVVGQlIyMXBSbkJSUkROQlF6SkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNS0xNyIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDUtMTgiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:53Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -86,9 +86,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJV2pCdE1ERnhjMHhSVm5OQlFrOUNNWGRDUnkwdExTMHRMUzB0YjNsamFtc3lPRUZCUVVGQlIyMW5OMFU0VDNBNVJGbEJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNS0yNCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDUtMjUiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVVRoRmEyMDFVV1pPYVhkQlJVUlhNVkZDUnkwdExTMHRMUzB0TFMxdmEybHFOVUZCUVVGQlIyMXBSbkJWVGtGUGQyRkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNS0yNCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDUtMjUiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:56Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -105,9 +105,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJUnpoMlZGTlNZbG8wWjBWQlFUZEVjMEZDUnkwdExTMHRMUzB0TFMxdmEzTjJNa0ZCUVVGQlIyMW5OMFpCVFRSNmRVVkJFZ3BUVVRRd01YeFRVVE0wR2dzSWo1WUxFQUlhQTFWVFJEZ2NjSStXQ3c9PSIsW1siREVMIiwiMjAyNi0wNS0zMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMDEiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVEVWTk5HMVhSVFJQYVZWQlJDMWxWRUZDUnkwdExTMHRMUzB0TFhaMGJtVXhNa0ZCUVVGQlIyMXBSbkJaU2xKU05rOUJFZ3BUVVRRd01YeFRVVE0wR2dzSW81WUxFQUlhQTFWVFJEZ2NjS09XQ3c9PSIsW1siREVMIiwiMjAyNi0wNS0zMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMDEiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:57Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -124,9 +124,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVEVWTk5HMVhSVFJQYVZWQlFXeHJaM2RDUnkwdExTMHRMUzB0TFhaMGJtVXhNa0ZCUVVGQlIyMW5OMFpGVEMwM00wMUJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNi0wNyIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMDgiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJY2t4bVJrTnBNbDgyTW05QlJUaENPV2RDUnkwdExTMHRMUzB0TFhCcVluTjZPRUZCUVVGQlIyMXBSbkJqU0ZabVdGRkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNi0wNyIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMDgiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:58Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -143,9 +143,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJWlhKVmRIQnhjbHByZUVWQlFXZFZOSGRDUnkwdExTMHRMUzB0TFMxNWJIQjBPRUZCUVVGQlIyMW5OMFpKU25oUmFXMUJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNi0xNCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMTUiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJV0VKR2MwbFJURmN6YTFGQlJFVjNlWGRDUnkwdExTMHRMUzB0ZG5SaVptc3hNMEZCUVVGQlIyMXBSbkJuUzB0RVRtVkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNi0xNCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMTUiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:58Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -162,9 +162,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJUldSdGIxbG5WbFIxU1ZsQlFXWkVVVUZDUnkwdExTMHRMUzB0TFMxNWFYRnJPVUZCUVVGQlIyMW5OMFpOUzA1WVREUkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNi0yMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMjIiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVmxsWlVVSkNVbGhhUlRoQlJIWk9OSGRDUnkwdExTMHRMUzB0TFhaM2FuQXhNRUZCUVVGQlIyMXBSbkJyU21VeFpIRkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNi0yMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMjIiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:59Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -181,9 +181,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJUzBsUk0zUXdkVkJLVm1kQlFrSlRRMUZDUnkwdExTMHRMUzB0YjNsamEzQXpNMEZCUVVGQlIyMW5OMFpSU3psdWEwbEJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNi0yOCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMjkiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJZGpGaGFqZHRja2hwWTNOQlJVZEZiM2RDUnkwdExTMHRMUzB0TFMxdmEyTmtNMEZCUVVGQlIyMXBSbkJ2Umt4Q2NUQkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNi0yOCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMjkiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:01Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -200,9 +200,9 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJYjJrMVNEWlFSbUZRT0ZGQlFtSk9WbmRDUnkwdExTMHRMUzB0Y0dwaWNHMHhNa0ZCUVVGQlIyMW5OMFpaUVhsb1RubEJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aVBsZ3NRQWhvRFZWTkVPQnh3ajVZTCIsW1siREVMIiwiMjAyNi0wNy0wNSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDctMDYiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVFZwMlRsOTNTVGQyU1ZGQlJVeFRaVUZDUnkwdExTMHRMUzB0Y0dwaWIyb3hNMEZCUVVGQlIyMXBSbkJ6UkV0SVdGTkJFZ3hUVVRRd01YeFRVVE0wSXpFYUN3aWpsZ3NRQWhvRFZWTkVPQnh3bzVZTCIsW1siREVMIiwiMjAyNi0wNy0wNSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDctMDYiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:02Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -219,23 +219,27 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 403",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJTm5Rd1EwOTFiVmxXWmpoQlFrRjBUa0ZDUnkwdExTMHRMUzB0TFMxdmEyVm5PVUZCUVVGQlIyMW5OMFYzUkhKU2RsVkJFZ3BUVVRRd00zeFRVVE0wR2dzSTV2SUxFQUlhQTFWVFJEZ2NjT2J5Q3c9PSIsW1siREVMIiwiMjAyNi0wNS0xMCIsIlNJTiIsbnVsbCwiU1EiLCI0MDMiXSxbIlNJTiIsIjIwMjYtMDUtMTEiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJYWxkeVNuRmxXR3RHWHpoQlJYZG9TbmRDUnkwdExTMHRMUzB0TFMxdmEyeG1NMEZCUVVGQlIyMXBSbkJOU1V3d1UzTkJFZ3BUVVRRd00zeFRVVE0wR2dzSTlQSUxFQUlhQTFWVFJEZ2NjUFR5Q3c9PSIsW1siREVMIiwiMjAyNi0wNS0xMCIsIlNJTiIsbnVsbCwiU1EiLCI0MDMiXSxbIlNJTiIsIjIwMjYtMDUtMTEiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:58:52Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         }
       ],
-      "prev_price": null,
-      "price_drop_pct": null,
+      "prev_price": 3401.0,
+      "price_drop_pct": 0.0,
       "alert": false,
       "price_history": [
         {
           "scanned_at": "2026-02-27T00:59:03Z",
           "best_price": 3401.0
+        },
+        {
+          "scanned_at": "2026-02-27T22:12:39Z",
+          "best_price": 3401.0
         }
       ],
       "errors": [],
-      "scanned_at": "2026-02-27T00:59:03Z"
+      "scanned_at": "2026-02-27T22:12:39Z"
     },
     {
       "trip_id": "trip2",
@@ -266,7 +270,7 @@
         "flight_number": "EK 226",
         "url": "https://www.google.com/travel/flights",
         "source": "google_flights",
-        "scanned_at": "2026-02-27T00:59:03Z",
+        "scanned_at": "2026-02-27T22:12:39Z",
         "is_preferred": true
       },
       "candidates": [
@@ -286,7 +290,7 @@
           "flight_number": "AS 20",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:04Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -305,7 +309,7 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:03Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -324,7 +328,7 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:03Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -343,7 +347,7 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:04Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -362,7 +366,7 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:04Z",
+          "scanned_at": "2026-02-27T22:12:40Z",
           "is_preferred": false
         },
         {
@@ -381,45 +385,26 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:04Z",
+          "scanned_at": "2026-02-27T22:12:40Z",
           "is_preferred": false
         },
         {
-          "id": "serpapi::trip2::2026-08-17::AS::AS20::2026-09-01",
+          "id": "serpapi::trip2::2026-08-17::UA::UA274::2026-09-01",
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 1752.0,
-          "total_price": 1752.0,
+          "price_per_person": 1751.0,
+          "total_price": 1751.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-01",
-          "duration_minutes": 1510,
+          "duration_minutes": 1300,
           "stops": 1,
-          "airline": "Alaska",
-          "airline_code": "AS",
-          "flight_number": "AS 20",
+          "airline": "United",
+          "airline_code": "UA",
+          "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:03Z",
-          "is_preferred": false
-        },
-        {
-          "id": "serpapi::trip2::2026-08-17::AS::AS20::2026-09-03",
-          "trip_id": "trip2",
-          "origin": "SFO",
-          "destination": "DEL",
-          "price_per_person": 1752.0,
-          "total_price": 1752.0,
-          "outbound_date": "2026-08-17",
-          "return_date": "2026-09-03",
-          "duration_minutes": 1510,
-          "stops": 1,
-          "airline": "Alaska",
-          "airline_code": "AS",
-          "flight_number": "AS 20",
-          "url": "https://www.google.com/travel/flights",
-          "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:03Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -431,14 +416,14 @@
           "total_price": 1766.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-03",
-          "duration_minutes": 1305,
+          "duration_minutes": 1300,
           "stops": 1,
           "airline": "United",
           "airline_code": "UA",
           "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:03Z",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         },
         {
@@ -457,7 +442,26 @@
           "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-02-27T00:59:04Z",
+          "scanned_at": "2026-02-27T22:12:40Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip2::2026-08-17::UA::UA2416::2026-09-01",
+          "trip_id": "trip2",
+          "origin": "SFO",
+          "destination": "DEL",
+          "price_per_person": 1768.0,
+          "total_price": 1768.0,
+          "outbound_date": "2026-08-17",
+          "return_date": "2026-09-01",
+          "duration_minutes": 1981,
+          "stops": 1,
+          "airline": "United",
+          "airline_code": "UA",
+          "flight_number": "UA 2416",
+          "url": "https://www.google.com/travel/flights",
+          "source": "google_flights",
+          "scanned_at": "2026-02-27T22:12:39Z",
           "is_preferred": false
         }
       ],
@@ -472,10 +476,14 @@
         {
           "scanned_at": "2026-02-27T00:59:04Z",
           "best_price": 3477.0
+        },
+        {
+          "scanned_at": "2026-02-27T22:12:40Z",
+          "best_price": 3477.0
         }
       ],
       "errors": [],
-      "scanned_at": "2026-02-27T00:59:04Z"
+      "scanned_at": "2026-02-27T22:12:40Z"
     }
   ]
 }
