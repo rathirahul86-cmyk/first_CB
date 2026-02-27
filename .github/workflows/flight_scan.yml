@@ -1,0 +1,45 @@
+name: Flight Price Scan
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"   # Mondays 9 AM UTC — fits Serpapi free tier (100/month)
+  workflow_dispatch:       # manual trigger from GitHub Actions UI
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-travel-${{ hashFiles('travel_agent/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-travel-
+
+      - name: Install dependencies
+        run: pip install -r travel_agent/requirements.txt
+
+      - name: Run flight scanner
+        env:
+          SERPAPI_KEY:    ${{ secrets.SERPAPI_KEY }}
+          EMAIL_USER:     ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_TO:       ${{ secrets.EMAIL_TO }}
+        run: python -m travel_agent.run --verbose
+
+      - name: Commit results if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add travel_agent/results.json travel_agent/flights.db
+          git diff --cached --quiet || git commit -m "chore: update flight scan results [skip ci]"
+          git push

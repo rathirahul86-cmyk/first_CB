@@ -1,0 +1,33 @@
+trips:
+  - id: trip1
+    name: "Delhi → SF (Apr–Jul 2026)"
+    origin: DEL
+    destination: SFO
+    travelers: 2
+    cabin: premium_economy
+    one_way: true
+    date_mode: flexible
+    date_from: "2026-04-12"
+    date_to:   "2026-07-10"
+    sample_interval_days: 7
+    preferred_airlines: [EK]
+    max_stops: 1
+    alert_threshold: 2500
+
+  - id: trip2
+    name: "SF → Delhi (Aug 17 + flexible return)"
+    origin: SFO
+    destination: DEL
+    travelers: 1
+    cabin: premium_economy
+    one_way: false
+    date_mode: fixed_outbound_flexible_return
+    outbound_date: "2026-08-17"
+    return_date_from: "2026-09-01"
+    return_date_to:   "2026-09-10"
+    return_sample_interval_days: 2
+    preferred_airlines: [EK, SQ, AI]
+    airline_priority: {EK: 1, SQ: 2, AI: 3}
+    max_stops: 1
+    sort_by: duration
+    alert_threshold: 1800

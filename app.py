@@ -698,6 +698,16 @@ def jobs():
             data = json.load(f)
     return render_template("jobs.html", data=data)
 
+TRAVEL_RESULTS = os.path.join(os.path.dirname(__file__), "travel_agent", "results.json")
+
+@app.route("/travel")
+def travel():
+    data = None
+    if os.path.exists(TRAVEL_RESULTS):
+        with open(TRAVEL_RESULTS) as f:
+            data = json.load(f)
+    return render_template("travel.html", data=data)
+
 @app.route("/api/files")
 def list_files():
     return jsonify({
