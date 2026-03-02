@@ -50,9 +50,11 @@ jobs:
 
       - name: Run job scanner
         env:
-          EMAIL_USER:     ${{ secrets.EMAIL_USER }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_TO:       ${{ secrets.EMAIL_TO }}
+          EMAIL_USER:          ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD:      ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_TO:            ${{ secrets.EMAIL_TO }}
+          TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:    ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python -m job_agent.run --verbose
 
       - name: Commit updated scan artifacts

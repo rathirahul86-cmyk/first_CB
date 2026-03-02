@@ -25,6 +25,7 @@ from .db                  import init_db, is_seen, mark_seen_batch
 from .filter              import filter_jobs
 from .notifier            import send_digest
 from .scorer              import score_jobs
+from .telegram_notifier   import send_job_alerts
 
 _RESULTS_PATH = os.path.join(os.path.dirname(__file__), "results.json")
 
@@ -172,6 +173,14 @@ def run_scan(
     except Exception as exc:
         errors.append(f"Email failed: {type(exc).__name__}: {exc}")
         logger.error("Email error: %s", exc)
+
+    # Telegram: alert for new jobs with match score >= 50%
+    scored_new = [j for j in score_jobs(new_jobs)]
+    try:
+        send_job_alerts(scored_new)
+    except Exception as exc:
+        errors.append(f"Telegram failed: {type(exc).__name__}: {exc}")
+        logger.error("Telegram error: %s", exc)
 
     return {
         "total_fetched":  len(all_jobs),
