@@ -285,12 +285,13 @@ def run_bot(
     config_path: Optional[str] = None,
     db_path: Optional[str] = None,
 ) -> None:
-    token   = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    token   = os.environ.get("UTILITIES_BOT_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("UTILITIES_CHAT_ID") or os.environ.get("TELEGRAM_CHAT_ID")
 
     if not token or not chat_id:
         raise EnvironmentError(
-            "TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set."
+            "UTILITIES_BOT_TOKEN and UTILITIES_CHAT_ID must be set "
+            "(falls back to TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID)."
         )
 
     config_path = config_path or DEFAULT_CONFIG_PATH

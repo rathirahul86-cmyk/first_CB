@@ -51,11 +51,11 @@ def send_bill_alert(utility: dict, bill, payment_id: str) -> None:
     Send a Telegram message for a newly detected bill.
     Silently skips if env vars are not set.
     """
-    token   = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    token   = os.environ.get("UTILITIES_BOT_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("UTILITIES_CHAT_ID") or os.environ.get("TELEGRAM_CHAT_ID")
 
     if not token or not chat_id:
-        logger.warning("TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set — skipping alert.")
+        logger.warning("UTILITIES_BOT_TOKEN or UTILITIES_CHAT_ID not set — skipping alert.")
         return
 
     try:
