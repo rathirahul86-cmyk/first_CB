@@ -1,0 +1,8 @@
+applicant:
+  name:     "Rahul Rathi"
+  email:    "rathi.r@yahoo.com"
+  phone:    "2134220007"
+  linkedin: "https://www.linkedin.com/in/rathirahul"
+  location: "San Jose, CA"
+  resume:   "RR_Resume_Jan'26.pdf"   # path relative to project root
+  cover_letter: ""                   # optional — leave blank to omit
