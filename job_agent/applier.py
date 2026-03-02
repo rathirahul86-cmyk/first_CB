@@ -66,6 +66,8 @@ def _apply_lever(posting_uuid: str, applicant: dict) -> dict:
 
     if resp.status_code in (200, 201):
         return {"status": "applied", "detail": "Submitted via Lever API"}
+    elif resp.status_code == 404:
+        return {"status": "error", "detail": "Posting closed or no longer accepting applications."}
     else:
         try:
             msg = resp.json()

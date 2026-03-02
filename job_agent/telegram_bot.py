@@ -101,18 +101,23 @@ def _load_top_jobs(min_score: int) -> list:
     with open(_RESULTS_PATH) as f:
         data = json.load(f)
     jobs = data.get("jobs", [])
-    return [j for j in jobs if j.get("match_score", 0) >= min_score
-            and j.get("is_new", False) is False or True]  # include all, not just new
+    return [j for j in jobs if j.get("match_score", 0) >= min_score]
+
+
+def _ats_label(job_id: str) -> str:
+    if job_id.startswith("lever::"):
+        return "🤖 auto"
+    return "🔗 manual"
 
 
 def _format_job_list(jobs: list) -> str:
     lines = []
     for i, j in enumerate(jobs, 1):
-        score   = j.get("match_score", 0)
-        ats     = "🤖" if j.get("id", "").startswith("lever::") else "🔗"
+        score = j.get("match_score", 0)
+        label = _ats_label(j.get("id", ""))
         lines.append(
-            f"{i}. {ats} <b>{j['title']}</b>\n"
-            f"   🏢 {j['company']} · {score}% match"
+            f"{i}. <b>{j['title']}</b>\n"
+            f"   🏢 {j['company']} · {score}% · {label}"
         )
     return "\n\n".join(lines)
 
@@ -153,11 +158,14 @@ def _handle_go_apply(token: str, chat_id: str, min_score: int,
     state["confirm_at"]     = time.time()
     state["awaiting_confirm"] = True
 
+    auto   = sum(1 for j in jobs if j.get("id","").startswith("lever::"))
+    manual = len(jobs) - auto
+
     msg = (
-        f"📋 <b>Found {len(jobs)} job(s) to apply to</b>\n\n"
+        f"📋 <b>Found {len(jobs)} job(s) · {auto} auto-apply · {manual} manual link</b>\n\n"
         f"{_format_job_list(jobs)}\n\n"
-        f"🤖 = API apply (automatic) · 🔗 = manual link\n\n"
-        f"Reply <b>confirm</b> to apply · <b>cancel</b> to abort\n"
+        f"🤖 auto = submitted instantly · 🔗 manual = link sent to you\n\n"
+        f"Reply <b>confirm</b> to proceed · <b>cancel</b> to abort\n"
         f"<i>(expires in 5 minutes)</i>"
     )
     _send(token, chat_id, msg)
