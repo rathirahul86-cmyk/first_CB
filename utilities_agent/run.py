@@ -34,7 +34,8 @@ def main() -> None:
     results = run_scan(config_path=args.config, dry_run=args.dry_run)
     print(json.dumps(results, indent=2))
 
-    if results["errors"]:
+    # Exit 1 only if ALL utilities failed — partial success is acceptable
+    if results["errors"] and results["errors"] == results["scanned"]:
         sys.exit(1)
 
 

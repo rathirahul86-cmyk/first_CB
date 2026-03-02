@@ -78,15 +78,17 @@ class SacWaterDriver(UtilityDriver):
 
         logger.info("Navigating to Sacramento County Water portal")
         page.goto("https://myutilities.saccounty.gov", wait_until="domcontentloaded")
-        page.wait_for_timeout(2000)
+        page.wait_for_timeout(3000)
 
         # Keycloak SSO login page
         page.fill("#username", self.credentials.get("username", ""))
         page.fill("#password", self.credentials.get("password", ""))
         page.click("#kc-login")
 
-        # Wait for Angular dashboard to render
-        page.wait_for_selector(".billing-container", timeout=20_000)
+        # Wait for SSO redirect + Angular dashboard to fully render.
+        # GitHub Actions is slower — use 45s and networkidle to be safe.
+        page.wait_for_load_state("networkidle", timeout=45_000)
+        page.wait_for_selector(".billing-container", timeout=45_000)
         page.wait_for_timeout(1000)
         logger.info("Login successful for %s", self.utility_name)
 
