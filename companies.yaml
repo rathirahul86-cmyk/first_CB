@@ -197,6 +197,24 @@ companies:
     priority: low
     notes: EU-based, mostly research/eng; TPM roles limited for now
 
+  - name: Zoox
+    ticker: private (Amazon subsidiary)
+    market_cap: "~3B"
+    ats: lever
+    career_url: https://jobs.lever.co/zoox
+    lever_id: zoox
+    priority: high
+    notes: 23 active TPM roles incl. Sr/Staff TPM - AI; autonomous vehicle; Foster City CA. Lever = auto-apply supported.
+
+  - name: Anyscale
+    ticker: private
+    market_cap: "~1B"
+    ats: lever
+    career_url: https://jobs.lever.co/anyscale
+    lever_id: anyscale
+    priority: high
+    notes: Ray distributed compute platform; ML infra TPM roles; strong match for GPU/compute background. Lever = auto-apply supported.
+
   - name: Cohere
     ticker: private
     market_cap: "~5B"
