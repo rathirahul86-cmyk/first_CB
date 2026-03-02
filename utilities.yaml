@@ -1,0 +1,82 @@
+# Utilities Bill Payment Agent Configuration
+#
+# Credentials are sourced from environment variables — never hardcoded here.
+#   {UTILITY_ID_UPPER}_USERNAME  e.g. PGE_USERNAME
+#   {UTILITY_ID_UPPER}_PASSWORD  e.g. PGE_PASSWORD
+#
+# Selector discovery tip: Set HEADLESS=false and run run.py once to inspect
+# the live DOM, then fill in the selector values below.
+
+utilities:
+
+  # ---------------------------------------------------------------------------
+  # PG&E — Pacific Gas and Electric
+  # ---------------------------------------------------------------------------
+  - id: pge
+    name: "PG&E"
+    enabled: false   # Set to true after verifying selectors with headless=False
+    login_url: "https://m.pge.com/#login"
+    payment_cap: 300.00
+    bill_period_format: "%Y_%m"
+    selectors:
+      username_field:    "#usernameField"
+      password_field:    "#passwordField"
+      login_button:      "#login-submit"
+      post_login_check:  ".dashboard-welcome"
+      bill_amount:       ".bill-amount-total"
+      due_date:          ".payment-due-date"
+      bill_period:       ".billing-period"
+      pay_nav_link:      "a[href*='payment']"
+      payment_submit:    "#payment-submit-btn"
+      confirm_button:    "#confirm-payment-btn"
+      success_indicator: ".payment-success-msg"
+
+  # ---------------------------------------------------------------------------
+  # Atlas Disposal — Soft-Pak JSP portal
+  # Selector discovery: run with HEADLESS=false on https://secure.soft-pak.com/webpakad/index.jsp
+  # ---------------------------------------------------------------------------
+  - id: atlas
+    name: "Atlas Disposal"
+    enabled: false   # Set to true after verifying selectors with headless=False
+    login_url: "https://secure.soft-pak.com/webpakad/index.jsp"
+    payment_cap: 150.00
+    bill_period_format: "%Y_%m"
+    selectors:
+      # TODO: inspect page with HEADLESS=false and fill in real selectors
+      username_field:    "#email"          # placeholder — verify
+      password_field:    "#password"       # placeholder — verify
+      login_button:      "#loginBtn"       # placeholder — verify
+      post_login_check:  ".account-summary" # placeholder — verify
+      bill_amount:       ".balance-due"    # placeholder — verify
+      due_date:          ".due-date"       # placeholder — verify
+      bill_period:       ".service-period" # placeholder — verify
+      pay_nav_link:      "a[href*='pay']"  # placeholder — verify
+      payment_submit:    "#pay-submit"     # placeholder — verify
+      confirm_button:    "#confirm-pay"    # placeholder — verify
+      success_indicator: ".pay-success"   # placeholder — verify
+
+  # ---------------------------------------------------------------------------
+  # Sacramento County Water Agency
+  # Platform: JavaScript SPA — requires Playwright (not static fetch)
+  # Risk: government portals may have reCAPTCHA — test headfully first
+  # Selector discovery: run with HEADLESS=false on https://myutilities.saccounty.gov
+  # ---------------------------------------------------------------------------
+  - id: sacwater
+    name: "Sacramento County Water"
+    enabled: false   # Set to true after verifying selectors with headless=False
+    login_url: "https://myutilities.saccounty.gov"
+    payment_cap: 200.00
+    bill_period_format: "%Y_%m"
+    selectors:
+      # TODO: inspect page with HEADLESS=false and fill in real selectors
+      username_field:    "#username"          # placeholder — verify
+      password_field:    "#password"          # placeholder — verify
+      login_button:      "button[type=submit]" # placeholder — verify
+      post_login_check:  ".account-dashboard"  # placeholder — verify
+      bill_amount:       ".amount-due"         # placeholder — verify
+      due_date:          ".due-date"           # placeholder — verify
+      bill_period:       ".billing-period"     # placeholder — verify
+      pay_nav_link:      "a[href*='payment']"  # placeholder — verify
+      payment_submit:    "#submit-payment"     # placeholder — verify
+      confirm_button:    "#confirm-payment"    # placeholder — verify
+      success_indicator: ".payment-confirmed"  # placeholder — verify
