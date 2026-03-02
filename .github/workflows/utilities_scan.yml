@@ -1,0 +1,78 @@
+# Utilities Bill Payment Agent — Scheduled Scanner
+#
+# Scans Atlas Disposal and Sacramento County Water for new bills.
+# When a new bill is detected, sends a Telegram alert to @Mojo_bill_bot.
+# User then responds in Telegram: pay [id] → confirm [id] to pay.
+#
+# Required secrets (repo Settings → Secrets and variables → Actions):
+#   UTILITIES_BOT_TOKEN   Telegram bot token for @Mojo_bill_bot
+#   UTILITIES_CHAT_ID     Telegram chat ID (8482018591)
+#   ATLAS_USERNAME        rathi.r@yahoo.com
+#   ATLAS_PASSWORD        Atlas Disposal password
+#   SACWATER_USERNAME     rathi.r@yahoo.com
+#   SACWATER_PASSWORD     Sacramento County Water password
+#
+# DB persistence: payments.db is committed back to the repo after each run
+# so the dedup store survives across workflow runs.
+
+name: Utilities Bill Scan
+
+on:
+  schedule:
+    - cron: "0 15 * * *"    # 8:00 AM PT daily (UTC-7)
+  workflow_dispatch:          # allow manual trigger from Actions UI
+
+permissions:
+  contents: write             # needed to commit payments.db back to repo
+
+jobs:
+  scan:
+    name: Scan Utility Bills
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-utilities-${{ hashFiles('utilities_agent/requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-utilities-
+
+      - name: Install dependencies
+        run: pip install -r utilities_agent/requirements.txt
+
+      - name: Install Playwright Chromium
+        run: playwright install chromium --with-deps
+
+      - name: Scan for new bills
+        env:
+          UTILITIES_BOT_TOKEN:  ${{ secrets.UTILITIES_BOT_TOKEN }}
+          UTILITIES_CHAT_ID:    ${{ secrets.UTILITIES_CHAT_ID }}
+          ATLAS_USERNAME:       ${{ secrets.ATLAS_USERNAME }}
+          ATLAS_PASSWORD:       ${{ secrets.ATLAS_PASSWORD }}
+          SACWATER_USERNAME:    ${{ secrets.SACWATER_USERNAME }}
+          SACWATER_PASSWORD:    ${{ secrets.SACWATER_PASSWORD }}
+        run: python -m utilities_agent.run
+
+      - name: Commit updated payments DB
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add utilities_agent/payments.db
+          if git diff --staged --quiet; then
+            echo "No changes — skipping commit."
+          else
+            git commit -m "chore: update utility payments db [skip ci]"
+            git push
+          fi
