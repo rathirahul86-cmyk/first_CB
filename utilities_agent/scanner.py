@@ -20,7 +20,15 @@ import yaml
 
 from .db import init_db, insert_pending, is_seen
 from .drivers.generic import GenericDriver
+from .drivers.sacwater import SacWaterDriver
 from .telegram_notifier import send_bill_alert
+
+
+def _make_driver(utility: dict, creds: dict, headless: bool = True):
+    """Return the right driver class for the utility."""
+    if utility["id"] == "sacwater":
+        return SacWaterDriver(utility, creds, headless)
+    return GenericDriver(utility, creds, headless)
 
 logger = logging.getLogger(__name__)
 
@@ -98,7 +106,7 @@ def run_scan(
 
         try:
             creds  = load_credentials(uid)
-            driver = GenericDriver(utility, creds, headless=True)
+            driver = _make_driver(utility, creds, headless=True)
             bill   = driver.check_only()
 
             payment_id = make_payment_id(utility, bill)

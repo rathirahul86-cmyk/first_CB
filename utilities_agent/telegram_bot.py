@@ -28,8 +28,7 @@ from typing import Optional
 import requests
 
 from .db import get_bill, get_pending_bills, init_db, update_status
-from .drivers.generic import GenericDriver
-from .scanner import load_config, load_credentials, run_scan
+from .scanner import load_config, load_credentials, run_scan, _make_driver
 
 logger = logging.getLogger(__name__)
 
@@ -209,7 +208,7 @@ def _handle_confirm(
         config   = load_config(config_path)
         utl_cfg  = next(u for u in config["utilities"] if u["id"] == bill["utility_id"])
         creds    = load_credentials(bill["utility_id"])
-        driver   = GenericDriver(utl_cfg, creds, headless=True)
+        driver   = _make_driver(utl_cfg, creds, headless=True)
         driver.login()
         driver.get_bill_info()
         result   = driver.pay_bill()
