@@ -1,5 +1,5 @@
 {
-  "last_scan": "2026-04-27 11:07 UTC",
+  "last_scan": "2026-05-04 11:06 UTC",
   "trip_count": 2,
   "alert_count": 0,
   "trips": [
@@ -15,22 +15,22 @@
       ],
       "alert_threshold": 2500,
       "best": {
-        "id": "serpapi::trip1::2026-05-17::EK::EK513",
+        "id": "serpapi::trip1::2026-05-24::EK::EK513",
         "trip_id": "trip1",
         "origin": "DEL",
         "destination": "SFO",
-        "price_per_person": 3493.0,
-        "total_price": 6986.0,
-        "outbound_date": "2026-05-17",
+        "price_per_person": 3458.0,
+        "total_price": 6916.0,
+        "outbound_date": "2026-05-24",
         "return_date": null,
         "duration_minutes": 1325,
         "stops": 1,
         "airline": "Emirates",
         "airline_code": "EK",
         "flight_number": "EK 513",
-        "url": "https://www.google.com/travel/flights?tfs=WyJDalJJYW1vdGFFVkpYMkZ3T1UxQlNXeFpWMUZDUnkwdExTMHRMUzB0TFhsc2FHVXhNVUZCUVVGQlIyNTJVVEJ2UlRoUGNHTkJFZ3RGU3pVeE0zeEZTekl5TlJvTENKS29GUkFDR2dOVlUwUTRISENTcUJVPSIsW1siREVMIiwiMjAyNi0wNS0xNyIsIkRYQiIsbnVsbCwiRUsiLCI1MTMiXSxbIkRYQiIsIjIwMjYtMDUtMTciLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
+        "url": "https://www.google.com/travel/flights?tfs=WyJDalJJZUZaR1ZpMHdPRW95TkRCQlREVnFaa0ZDUnkwdExTMHRMUzB0Y0dwaVpuVXhNMEZCUVVGQlIyNDBabUU0U1RsSGNHMUJFZ3RGU3pVeE0zeEZTekl5TlJvTENNU05GUkFDR2dOVlUwUTRISERFalJVPSIsW1siREVMIiwiMjAyNi0wNS0yNCIsIkRYQiIsbnVsbCwiRUsiLCI1MTMiXSxbIkRYQiIsIjIwMjYtMDUtMjQiLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
         "source": "google_flights",
-        "scanned_at": "2026-04-27T11:06:51Z",
+        "scanned_at": "2026-05-04T11:06:24Z",
         "is_preferred": true
       },
       "candidates": [
@@ -39,8 +39,8 @@
           "trip_id": "trip1",
           "origin": "DEL",
           "destination": "SFO",
-          "price_per_person": 2620.0,
-          "total_price": 5240.0,
+          "price_per_person": 2598.0,
+          "total_price": 5196.0,
           "outbound_date": "2026-06-07",
           "return_date": null,
           "duration_minutes": 2220,
@@ -48,28 +48,9 @@
           "airline": "Cathay Pacific",
           "airline_code": "CX",
           "flight_number": "CX 698",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJTlVwd2NITkdNa3BsU1c5QlRrSTJNa0ZDUnkwdExTMHRkblJpWjNBeU55MXVNVUZCUVVGQlIyNTJVVEEwUVdKV1dUaEJFZ3REV0RZNU9IeERXRGczTWhvTENNTCtEeEFDR2dOVlUwUTRISERDL2c4PSIsW1siREVMIiwiMjAyNi0wNi0wNyIsIkhLRyIsbnVsbCwiQ1giLCI2OTgiXSxbIkhLRyIsIjIwMjYtMDYtMDkiLCJTRk8iLG51bGwsIkNYIiwiODcyIl1dXQ==",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJUTNObU4ydEpiMlZrUVdOQlRtcFRMVUZDUnkwdExTMHRMUzB0TFhaMGNIVXlNRUZCUVVGQlIyNDBabUpGUjNnNU4xRkJFZ3REV0RZNU9IeERXRGczTWhvTENOVHREeEFDR2dOVlUwUTRISERVN1E4PSIsW1siREVMIiwiMjAyNi0wNi0wNyIsIkhLRyIsbnVsbCwiQ1giLCI2OTgiXSxbIkhLRyIsIjIwMjYtMDYtMDkiLCJTRk8iLG51bGwsIkNYIiwiODcyIl1dXQ==",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:54Z",
-          "is_preferred": false
-        },
-        {
-          "id": "serpapi::trip1::2026-07-05::CX::CX698",
-          "trip_id": "trip1",
-          "origin": "DEL",
-          "destination": "SFO",
-          "price_per_person": 2620.0,
-          "total_price": 5240.0,
-          "outbound_date": "2026-07-05",
-          "return_date": null,
-          "duration_minutes": 2220,
-          "stops": 1,
-          "airline": "Cathay Pacific",
-          "airline_code": "CX",
-          "flight_number": "CX 698",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVVhWclZ6ZERPVWhYU21OQlNqbE5XRkZDUnkwdExTMHRMUzB0TFhsc2Ftc3hNVUZCUVVGQlIyNTJVVEZKU1ZKWGVVMUJFZ3REV0RZNU9IeERXRGczTWhvTENNTCtEeEFDR2dOVlUwUTRISERDL2c4PSIsW1siREVMIiwiMjAyNi0wNy0wNSIsIkhLRyIsbnVsbCwiQ1giLCI2OTgiXSxbIkhLRyIsIjIwMjYtMDctMDciLCJTRk8iLG51bGwsIkNYIiwiODcyIl1dXQ==",
-          "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:58Z",
+          "scanned_at": "2026-05-04T11:06:25Z",
           "is_preferred": false
         },
         {
@@ -77,8 +58,8 @@
           "trip_id": "trip1",
           "origin": "DEL",
           "destination": "SFO",
-          "price_per_person": 2945.0,
-          "total_price": 5890.0,
+          "price_per_person": 2913.0,
+          "total_price": 5826.0,
           "outbound_date": "2026-06-21",
           "return_date": null,
           "duration_minutes": 2885,
@@ -86,28 +67,85 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVUZGTWJrc3pVVzVoU2tGQlNYZFdNbEZDUnkwdExTMHRMUzB0TFMxNWJHOWlOVUZCUVVGQlIyNTJVVEZCUWtwWmNEaEJFZ3BUVVRRd01YeFRVVE0wR2dzSXNQd1JFQUlhQTFWVFJEZ2NjTEQ4RVE9PSIsW1siREVMIiwiMjAyNi0wNi0yMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMjIiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVWtJNVQwSmtjalF6VEdOQlRWRTRSV2RDUnkwdExTMHRMUzB0TFMxd2FuUmxOa0ZCUVVGQlIyNDBabUpyVEZKSFFtdEJFZ3BUVVRRd01YeFRVVE0wR2dzSXl1TVJFQUlhQTFWVFJEZ2NjTXJqRVE9PSIsW1siREVMIiwiMjAyNi0wNi0yMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMjIiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:56Z",
+          "scanned_at": "2026-05-04T11:06:34Z",
           "is_preferred": false
         },
         {
-          "id": "serpapi::trip1::2026-07-05::SQ::SQ401",
+          "id": "serpapi::trip1::2026-06-28::SQ::SQ401",
           "trip_id": "trip1",
           "origin": "DEL",
           "destination": "SFO",
-          "price_per_person": 2945.0,
-          "total_price": 5890.0,
-          "outbound_date": "2026-07-05",
+          "price_per_person": 2913.0,
+          "total_price": 5826.0,
+          "outbound_date": "2026-06-28",
           "return_date": null,
           "duration_minutes": 2885,
           "stops": 1,
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 401",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVVhWclZ6ZERPVWhYU21OQlNqbE5XRkZDUnkwdExTMHRMUzB0TFhsc2Ftc3hNVUZCUVVGQlIyNTJVVEZKU1ZKWGVVMUJFZ3BUVVRRd01YeFRVVE0wR2dzSXNQd1JFQUlhQTFWVFJEZ2NjTEQ4RVE9PSIsW1siREVMIiwiMjAyNi0wNy0wNSIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDctMDYiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJWjFocGRVRkRTRVpIU3pCQlNXWkpiMEZDUnkwdExTMHRMUzB0TFhsc1puTXhPVUZCUVVGQlIyNDBabUp2UldrME1HdEJFZ3BUVVRRd01YeFRVVE0wR2dzSXl1TVJFQUlhQTFWVFJEZ2NjTXJqRVE9PSIsW1siREVMIiwiMjAyNi0wNi0yOCIsIlNJTiIsbnVsbCwiU1EiLCI0MDEiXSxbIlNJTiIsIjIwMjYtMDYtMjkiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:58Z",
+          "scanned_at": "2026-05-04T11:06:34Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip1::2026-05-24::AI::AI111",
+          "trip_id": "trip1",
+          "origin": "DEL",
+          "destination": "SFO",
+          "price_per_person": 2933.0,
+          "total_price": 5866.0,
+          "outbound_date": "2026-05-24",
+          "return_date": null,
+          "duration_minutes": 1625,
+          "stops": 1,
+          "airline": "Air India",
+          "airline_code": "AI",
+          "flight_number": "AI 111",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJZUZaR1ZpMHdPRW95TkRCQlREVnFaa0ZDUnkwdExTMHRMUzB0Y0dwaVpuVXhNMEZCUVVGQlIyNDBabUU0U1RsSGNHMUJFZ3RCU1RFeE1YeFZRVGt6T1JvTENOcnlFUkFDR2dOVlUwUTRISERhOGhFPSIsW1siREVMIiwiMjAyNi0wNS0yNCIsIkxIUiIsbnVsbCwiQUkiLCIxMTEiXSxbIkxIUiIsIjIwMjYtMDUtMjQiLCJTRk8iLG51bGwsIlVBIiwiOTM5Il1dXQ==",
+          "source": "google_flights",
+          "scanned_at": "2026-05-04T11:06:24Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip1::2026-06-14::AI::AI161",
+          "trip_id": "trip1",
+          "origin": "DEL",
+          "destination": "SFO",
+          "price_per_person": 2933.0,
+          "total_price": 5866.0,
+          "outbound_date": "2026-06-14",
+          "return_date": null,
+          "duration_minutes": 1535,
+          "stops": 1,
+          "airline": "Air India",
+          "airline_code": "AI",
+          "flight_number": "AI 161",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJWkVKUFlUVk1kR2RzZFhOQlNYQjVhM2RDUnkwdExTMHRMUzB0TFMxNWJIQnJNVUZCUVVGQlIyNDBabUpKU3pSTFJUaEJFZ3RCU1RFMk1YeFZRVGt3TUJvTENOcnlFUkFDR2dOVlUwUTRISERhOGhFPSIsW1siREVMIiwiMjAyNi0wNi0xNCIsIkxIUiIsbnVsbCwiQUkiLCIxNjEiXSxbIkxIUiIsIjIwMjYtMDYtMTQiLCJTRk8iLG51bGwsIlVBIiwiOTAwIl1dXQ==",
+          "source": "google_flights",
+          "scanned_at": "2026-05-04T11:06:27Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip1::2026-06-28::AI::AI161",
+          "trip_id": "trip1",
+          "origin": "DEL",
+          "destination": "SFO",
+          "price_per_person": 2933.0,
+          "total_price": 5866.0,
+          "outbound_date": "2026-06-28",
+          "return_date": null,
+          "duration_minutes": 1535,
+          "stops": 1,
+          "airline": "Air India",
+          "airline_code": "AI",
+          "flight_number": "AI 161",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJWjFocGRVRkRTRVpIU3pCQlNXWkpiMEZDUnkwdExTMHRMUzB0TFhsc1puTXhPVUZCUVVGQlIyNDBabUp2UldrME1HdEJFZ3RCU1RFMk1YeFZRVGt3TUJvTENOcnlFUkFDR2dOVlUwUTRISERhOGhFPSIsW1siREVMIiwiMjAyNi0wNi0yOCIsIkxIUiIsbnVsbCwiQUkiLCIxNjEiXSxbIkxIUiIsIjIwMjYtMDYtMjgiLCJTRk8iLG51bGwsIlVBIiwiOTAwIl1dXQ==",
+          "source": "google_flights",
+          "scanned_at": "2026-05-04T11:06:34Z",
           "is_preferred": false
         },
         {
@@ -115,8 +153,8 @@
           "trip_id": "trip1",
           "origin": "DEL",
           "destination": "SFO",
-          "price_per_person": 3202.0,
-          "total_price": 6404.0,
+          "price_per_person": 3167.0,
+          "total_price": 6334.0,
           "outbound_date": "2026-06-21",
           "return_date": null,
           "duration_minutes": 2110,
@@ -124,56 +162,56 @@
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 403",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVUZGTWJrc3pVVzVoU2tGQlNYZFdNbEZDUnkwdExTMHRMUzB0TFMxNWJHOWlOVUZCUVVGQlIyNTJVVEZCUWtwWmNEaEJFZ3BUVVRRd00zeFRVVE0wR2dzSXg4VVRFQUlhQTFWVFJEZ2NjTWZGRXc9PSIsW1siREVMIiwiMjAyNi0wNi0yMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDMiXSxbIlNJTiIsIjIwMjYtMDYtMjIiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVWtJNVQwSmtjalF6VEdOQlRWRTRSV2RDUnkwdExTMHRMUzB0TFMxd2FuUmxOa0ZCUVVGQlIyNDBabUpyVEZKSFFtdEJFZ3BUVVRRd00zeFRVVE0wR2dzSTY2a1RFQUlhQTFWVFJEZ2NjT3VwRXc9PSIsW1siREVMIiwiMjAyNi0wNi0yMSIsIlNJTiIsbnVsbCwiU1EiLCI0MDMiXSxbIlNJTiIsIjIwMjYtMDYtMjIiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:56Z",
+          "scanned_at": "2026-05-04T11:06:34Z",
           "is_preferred": false
         },
         {
-          "id": "serpapi::trip1::2026-07-05::SQ::SQ403",
+          "id": "serpapi::trip1::2026-06-28::SQ::SQ403",
           "trip_id": "trip1",
           "origin": "DEL",
           "destination": "SFO",
-          "price_per_person": 3202.0,
-          "total_price": 6404.0,
-          "outbound_date": "2026-07-05",
+          "price_per_person": 3167.0,
+          "total_price": 6334.0,
+          "outbound_date": "2026-06-28",
           "return_date": null,
           "duration_minutes": 2110,
           "stops": 1,
           "airline": "Singapore Airlines",
           "airline_code": "SQ",
           "flight_number": "SQ 403",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJVVhWclZ6ZERPVWhYU21OQlNqbE5XRkZDUnkwdExTMHRMUzB0TFhsc2Ftc3hNVUZCUVVGQlIyNTJVVEZKU1ZKWGVVMUJFZ3BUVVRRd00zeFRVVE0wR2dzSXg4VVRFQUlhQTFWVFJEZ2NjTWZGRXc9PSIsW1siREVMIiwiMjAyNi0wNy0wNSIsIlNJTiIsbnVsbCwiU1EiLCI0MDMiXSxbIlNJTiIsIjIwMjYtMDctMDYiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJWjFocGRVRkRTRVpIU3pCQlNXWkpiMEZDUnkwdExTMHRMUzB0TFhsc1puTXhPVUZCUVVGQlIyNDBabUp2UldrME1HdEJFZ3BUVVRRd00zeFRVVE0wR2dzSTY2a1RFQUlhQTFWVFJEZ2NjT3VwRXc9PSIsW1siREVMIiwiMjAyNi0wNi0yOCIsIlNJTiIsbnVsbCwiU1EiLCI0MDMiXSxbIlNJTiIsIjIwMjYtMDYtMjkiLCJTRk8iLG51bGwsIlNRIiwiMzQiXV1d",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:58Z",
+          "scanned_at": "2026-05-04T11:06:34Z",
           "is_preferred": false
         },
         {
-          "id": "serpapi::trip1::2026-05-17::EK::EK513",
+          "id": "serpapi::trip1::2026-07-10::BA::BA142",
           "trip_id": "trip1",
           "origin": "DEL",
           "destination": "SFO",
-          "price_per_person": 3493.0,
-          "total_price": 6986.0,
-          "outbound_date": "2026-05-17",
+          "price_per_person": 3375.0,
+          "total_price": 6750.0,
+          "outbound_date": "2026-07-10",
           "return_date": null,
-          "duration_minutes": 1325,
+          "duration_minutes": 1715,
           "stops": 1,
-          "airline": "Emirates",
-          "airline_code": "EK",
-          "flight_number": "EK 513",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJYW1vdGFFVkpYMkZ3T1UxQlNXeFpWMUZDUnkwdExTMHRMUzB0TFhsc2FHVXhNVUZCUVVGQlIyNTJVVEJ2UlRoUGNHTkJFZ3RGU3pVeE0zeEZTekl5TlJvTENKS29GUkFDR2dOVlUwUTRISENTcUJVPSIsW1siREVMIiwiMjAyNi0wNS0xNyIsIkRYQiIsbnVsbCwiRUsiLCI1MTMiXSxbIkRYQiIsIjIwMjYtMDUtMTciLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
+          "airline": "British Airways",
+          "airline_code": "BA",
+          "flight_number": "BA 142",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJUTNSME5URk5aelJHVmxWQlNIWmpRV2RDUnkwdExTMHRMUzB0TFhscFltbDRORUZCUVVGQlIyNDBabUozUkUwd1VuTkJFZ3RDUVRFME1ueENRVEk0TnhvTENLZk1GQkFDR2dOVlUwUTRISENuekJRPSIsW1siREVMIiwiMjAyNi0wNy0xMCIsIkxIUiIsbnVsbCwiQkEiLCIxNDIiXSxbIkxIUiIsIjIwMjYtMDctMTAiLCJTRk8iLG51bGwsIkJBIiwiMjg3Il1dXQ==",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:51Z",
-          "is_preferred": true
+          "scanned_at": "2026-05-04T11:06:36Z",
+          "is_preferred": false
         },
         {
           "id": "serpapi::trip1::2026-05-24::EK::EK513",
           "trip_id": "trip1",
           "origin": "DEL",
           "destination": "SFO",
-          "price_per_person": 3493.0,
-          "total_price": 6986.0,
+          "price_per_person": 3458.0,
+          "total_price": 6916.0,
           "outbound_date": "2026-05-24",
           "return_date": null,
           "duration_minutes": 1325,
@@ -181,58 +219,16 @@
           "airline": "Emirates",
           "airline_code": "EK",
           "flight_number": "EK 513",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJYW1aNVNWWnNRVWswVEZsQlQzVlBVVUZDUnkwdExTMHRMUzB0TFhaM2JISXlNa0ZCUVVGQlIyNTJVVEIzUmxOdGRIbEJFZ3RGU3pVeE0zeEZTekl5TlJvTENKS29GUkFDR2dOVlUwUTRISENTcUJVPSIsW1siREVMIiwiMjAyNi0wNS0yNCIsIkRYQiIsbnVsbCwiRUsiLCI1MTMiXSxbIkRYQiIsIjIwMjYtMDUtMjQiLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
+          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJZUZaR1ZpMHdPRW95TkRCQlREVnFaa0ZDUnkwdExTMHRMUzB0Y0dwaVpuVXhNMEZCUVVGQlIyNDBabUU0U1RsSGNHMUJFZ3RGU3pVeE0zeEZTekl5TlJvTENNU05GUkFDR2dOVlUwUTRISERFalJVPSIsW1siREVMIiwiMjAyNi0wNS0yNCIsIkRYQiIsbnVsbCwiRUsiLCI1MTMiXSxbIkRYQiIsIjIwMjYtMDUtMjQiLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:52Z",
-          "is_preferred": true
-        },
-        {
-          "id": "serpapi::trip1::2026-05-24::EK::EK515",
-          "trip_id": "trip1",
-          "origin": "DEL",
-          "destination": "SFO",
-          "price_per_person": 3493.0,
-          "total_price": 6986.0,
-          "outbound_date": "2026-05-24",
-          "return_date": null,
-          "duration_minutes": 1705,
-          "stops": 1,
-          "airline": "Emirates",
-          "airline_code": "EK",
-          "flight_number": "EK 515",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJYW1aNVNWWnNRVWswVEZsQlQzVlBVVUZDUnkwdExTMHRMUzB0TFhaM2JISXlNa0ZCUVVGQlIyNTJVVEIzUmxOdGRIbEJFZ3RGU3pVeE5YeEZTekl5TlJvTENKS29GUkFDR2dOVlUwUTRISENTcUJVPSIsW1siREVMIiwiMjAyNi0wNS0yNCIsIkRYQiIsbnVsbCwiRUsiLCI1MTUiXSxbIkRYQiIsIjIwMjYtMDUtMjUiLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
-          "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:52Z",
-          "is_preferred": true
-        },
-        {
-          "id": "serpapi::trip1::2026-06-14::EK::EK515",
-          "trip_id": "trip1",
-          "origin": "DEL",
-          "destination": "SFO",
-          "price_per_person": 3493.0,
-          "total_price": 6986.0,
-          "outbound_date": "2026-06-14",
-          "return_date": null,
-          "duration_minutes": 1705,
-          "stops": 1,
-          "airline": "Emirates",
-          "airline_code": "EK",
-          "flight_number": "EK 515",
-          "url": "https://www.google.com/travel/flights?tfs=WyJDalJJUjFCQmJFWlVOM2w2Y2tWQlQwNUpiMEZDUnkwdExTMHRMUzB0TFhaMFltWnFPRUZCUVVGQlIyNTJVVEE0UkRGM2MzVkJFZ3RGU3pVeE5YeEZTekl5TlJvTENKS29GUkFDR2dOVlUwUTRISENTcUJVPSIsW1siREVMIiwiMjAyNi0wNi0xNCIsIkRYQiIsbnVsbCwiRUsiLCI1MTUiXSxbIkRYQiIsIjIwMjYtMDYtMTUiLCJTRk8iLG51bGwsIkVLIiwiMjI1Il1dXQ==",
-          "source": "google_flights",
-          "scanned_at": "2026-04-27T11:06:55Z",
+          "scanned_at": "2026-05-04T11:06:24Z",
           "is_preferred": true
         }
       ],
-      "prev_price": 3345.0,
-      "price_drop_pct": -4.4,
+      "prev_price": 3493.0,
+      "price_drop_pct": 1.0,
       "alert": false,
       "price_history": [
-        {
-          "scanned_at": "2026-03-30T10:19:30Z",
-          "best_price": 3289.0
-        },
         {
           "scanned_at": "2026-04-06T10:12:24Z",
           "best_price": 3342.0
@@ -248,14 +244,19 @@
         {
           "scanned_at": "2026-04-27T11:07:00Z",
           "best_price": 3493.0
+        },
+        {
+          "scanned_at": "2026-05-04T11:06:36Z",
+          "best_price": 3458.0
         }
       ],
       "errors": [
         "Fetch failed for 2026-04-12/None: 400 Client Error: Bad Request for url: https://serpapi.com/search?engine=google_flights&api_key=064fa88f719bebb933ca2ee80b723e6e9c4fbc3beeaee445c5ae403994a6ce60&departure_id=DEL&arrival_id=SFO&outbound_date=2026-04-12&adults=2&travel_class=2&type=2&currency=USD&hl=en",
         "Fetch failed for 2026-04-19/None: 400 Client Error: Bad Request for url: https://serpapi.com/search?engine=google_flights&api_key=064fa88f719bebb933ca2ee80b723e6e9c4fbc3beeaee445c5ae403994a6ce60&departure_id=DEL&arrival_id=SFO&outbound_date=2026-04-19&adults=2&travel_class=2&type=2&currency=USD&hl=en",
-        "Fetch failed for 2026-04-26/None: Serpapi error: Google Flights hasn't returned any results for this query."
+        "Fetch failed for 2026-04-26/None: 400 Client Error: Bad Request for url: https://serpapi.com/search?engine=google_flights&api_key=064fa88f719bebb933ca2ee80b723e6e9c4fbc3beeaee445c5ae403994a6ce60&departure_id=DEL&arrival_id=SFO&outbound_date=2026-04-26&adults=2&travel_class=2&type=2&currency=USD&hl=en",
+        "Fetch failed for 2026-05-03/None: Serpapi error: Google Flights hasn't returned any results for this query."
       ],
-      "scanned_at": "2026-04-27T11:07:00Z"
+      "scanned_at": "2026-05-04T11:06:36Z"
     },
     {
       "trip_id": "trip2",
@@ -286,10 +287,29 @@
         "flight_number": "EK 226",
         "url": "https://www.google.com/travel/flights",
         "source": "google_flights",
-        "scanned_at": "2026-04-27T11:07:01Z",
+        "scanned_at": "2026-05-04T11:06:37Z",
         "is_preferred": true
       },
       "candidates": [
+        {
+          "id": "serpapi::trip2::2026-08-17::AZ::AZ641::2026-09-01",
+          "trip_id": "trip2",
+          "origin": "SFO",
+          "destination": "DEL",
+          "price_per_person": 2100.0,
+          "total_price": 2100.0,
+          "outbound_date": "2026-08-17",
+          "return_date": "2026-09-01",
+          "duration_minutes": 1285,
+          "stops": 1,
+          "airline": "ITA",
+          "airline_code": "AZ",
+          "flight_number": "AZ 641",
+          "url": "https://www.google.com/travel/flights",
+          "source": "google_flights",
+          "scanned_at": "2026-05-04T11:06:37Z",
+          "is_preferred": false
+        },
         {
           "id": "serpapi::trip2::2026-08-17::AZ::AZ641::2026-09-09",
           "trip_id": "trip2",
@@ -306,7 +326,7 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:05Z",
+          "scanned_at": "2026-05-04T11:06:41Z",
           "is_preferred": false
         },
         {
@@ -325,7 +345,7 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:07Z",
+          "scanned_at": "2026-05-04T11:06:42Z",
           "is_preferred": false
         },
         {
@@ -333,8 +353,8 @@
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2157.0,
-          "total_price": 2157.0,
+          "price_per_person": 2156.0,
+          "total_price": 2156.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-10",
           "duration_minutes": 1300,
@@ -344,7 +364,7 @@
           "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:07Z",
+          "scanned_at": "2026-05-04T11:06:42Z",
           "is_preferred": false
         },
         {
@@ -363,7 +383,7 @@
           "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:01Z",
+          "scanned_at": "2026-05-04T11:06:37Z",
           "is_preferred": false
         },
         {
@@ -382,7 +402,7 @@
           "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:02Z",
+          "scanned_at": "2026-05-04T11:06:38Z",
           "is_preferred": false
         },
         {
@@ -401,26 +421,7 @@
           "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:05Z",
-          "is_preferred": false
-        },
-        {
-          "id": "serpapi::trip2::2026-08-17::LH::LH459::2026-09-10",
-          "trip_id": "trip2",
-          "origin": "SFO",
-          "destination": "DEL",
-          "price_per_person": 2202.0,
-          "total_price": 2202.0,
-          "outbound_date": "2026-08-17",
-          "return_date": "2026-09-10",
-          "duration_minutes": 2300,
-          "stops": 1,
-          "airline": "Lufthansa",
-          "airline_code": "LH",
-          "flight_number": "LH 459",
-          "url": "https://www.google.com/travel/flights",
-          "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:07Z",
+          "scanned_at": "2026-05-04T11:06:41Z",
           "is_preferred": false
         },
         {
@@ -439,26 +440,7 @@
           "flight_number": "LH 455",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:05Z",
-          "is_preferred": false
-        },
-        {
-          "id": "serpapi::trip2::2026-08-17::LH::LH459::2026-09-09",
-          "trip_id": "trip2",
-          "origin": "SFO",
-          "destination": "DEL",
-          "price_per_person": 2212.0,
-          "total_price": 2212.0,
-          "outbound_date": "2026-08-17",
-          "return_date": "2026-09-09",
-          "duration_minutes": 2300,
-          "stops": 1,
-          "airline": "Lufthansa",
-          "airline_code": "LH",
-          "flight_number": "LH 459",
-          "url": "https://www.google.com/travel/flights",
-          "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:05Z",
+          "scanned_at": "2026-05-04T11:06:41Z",
           "is_preferred": false
         },
         {
@@ -477,18 +459,33 @@
           "flight_number": "LH 455",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-04-27T11:07:07Z",
+          "scanned_at": "2026-05-04T11:06:42Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip2::2026-08-17::LH::LH455::2026-09-01",
+          "trip_id": "trip2",
+          "origin": "SFO",
+          "destination": "DEL",
+          "price_per_person": 2222.0,
+          "total_price": 2222.0,
+          "outbound_date": "2026-08-17",
+          "return_date": "2026-09-01",
+          "duration_minutes": 1305,
+          "stops": 1,
+          "airline": "Lufthansa",
+          "airline_code": "LH",
+          "flight_number": "LH 455",
+          "url": "https://www.google.com/travel/flights",
+          "source": "google_flights",
+          "scanned_at": "2026-05-04T11:06:37Z",
           "is_preferred": false
         }
       ],
-      "prev_price": 3476.0,
-      "price_drop_pct": -5.9,
+      "prev_price": 3681.0,
+      "price_drop_pct": 0.0,
       "alert": false,
       "price_history": [
-        {
-          "scanned_at": "2026-03-30T10:19:40Z",
-          "best_price": 3476.0
-        },
         {
           "scanned_at": "2026-04-06T10:12:32Z",
           "best_price": 3476.0
@@ -504,10 +501,14 @@
         {
           "scanned_at": "2026-04-27T11:07:07Z",
           "best_price": 3681.0
+        },
+        {
+          "scanned_at": "2026-05-04T11:06:42Z",
+          "best_price": 3681.0
         }
       ],
       "errors": [],
-      "scanned_at": "2026-04-27T11:07:07Z"
+      "scanned_at": "2026-05-04T11:06:42Z"
     }
   ]
 }
