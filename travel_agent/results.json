@@ -1,5 +1,5 @@
 {
-  "last_scan": "2026-07-13 12:08 UTC",
+  "last_scan": "2026-07-20 11:46 UTC",
   "trip_count": 2,
   "alert_count": 0,
   "trips": [
@@ -20,10 +20,6 @@
       "price_drop_pct": null,
       "alert": false,
       "price_history": [
-        {
-          "scanned_at": "2026-06-15T15:17:01Z",
-          "best_price": 3779.0
-        },
         {
           "scanned_at": "2026-06-22T14:42:51Z",
           "best_price": 3861.0
@@ -53,7 +49,7 @@
         "Fetch failed for 2026-07-05/None: 400 Client Error: Bad Request for url: https://serpapi.com/search?engine=google_flights&api_key=064fa88f719bebb933ca2ee80b723e6e9c4fbc3beeaee445c5ae403994a6ce60&departure_id=DEL&arrival_id=SFO&outbound_date=2026-07-05&adults=2&travel_class=2&type=2&currency=USD&hl=en",
         "Fetch failed for 2026-07-10/None: 400 Client Error: Bad Request for url: https://serpapi.com/search?engine=google_flights&api_key=064fa88f719bebb933ca2ee80b723e6e9c4fbc3beeaee445c5ae403994a6ce60&departure_id=DEL&arrival_id=SFO&outbound_date=2026-07-10&adults=2&travel_class=2&type=2&currency=USD&hl=en"
       ],
-      "scanned_at": "2026-07-13T12:07:44Z"
+      "scanned_at": "2026-07-20T11:46:22Z"
     },
     {
       "trip_id": "trip2",
@@ -84,19 +80,19 @@
         "flight_number": "EK 226",
         "url": "https://www.google.com/travel/flights",
         "source": "google_flights",
-        "scanned_at": "2026-07-13T12:07:51Z",
+        "scanned_at": "2026-07-20T11:46:28Z",
         "is_preferred": true
       },
       "candidates": [
         {
-          "id": "serpapi::trip2::2026-08-17::BA::BA286::2026-09-09",
+          "id": "serpapi::trip2::2026-08-17::BA::BA286::2026-09-10",
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 1623.0,
-          "total_price": 1623.0,
+          "price_per_person": 1633.0,
+          "total_price": 1633.0,
           "outbound_date": "2026-08-17",
-          "return_date": "2026-09-09",
+          "return_date": "2026-09-10",
           "duration_minutes": 1440,
           "stops": 1,
           "airline": "British Airways",
@@ -104,7 +100,26 @@
           "flight_number": "BA 286",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:08:05Z",
+          "scanned_at": "2026-07-20T11:46:44Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip2::2026-08-17::AZ::AZ641::2026-09-01",
+          "trip_id": "trip2",
+          "origin": "SFO",
+          "destination": "DEL",
+          "price_per_person": 2099.0,
+          "total_price": 2099.0,
+          "outbound_date": "2026-08-17",
+          "return_date": "2026-09-01",
+          "duration_minutes": 1285,
+          "stops": 1,
+          "airline": "ITA",
+          "airline_code": "AZ",
+          "flight_number": "AZ 641",
+          "url": "https://www.google.com/travel/flights",
+          "source": "google_flights",
+          "scanned_at": "2026-07-20T11:46:28Z",
           "is_preferred": false
         },
         {
@@ -123,7 +138,7 @@
           "flight_number": "AZ 641",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:08:05Z",
+          "scanned_at": "2026-07-20T11:46:40Z",
           "is_preferred": false
         },
         {
@@ -142,45 +157,26 @@
           "flight_number": "JL 57",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:07:51Z",
+          "scanned_at": "2026-07-20T11:46:28Z",
           "is_preferred": false
         },
         {
-          "id": "serpapi::trip2::2026-08-17::UA::UA274::2026-09-01",
+          "id": "serpapi::trip2::2026-08-17::JL::JL57::2026-09-10",
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2323.0,
-          "total_price": 2323.0,
+          "price_per_person": 2270.0,
+          "total_price": 2270.0,
           "outbound_date": "2026-08-17",
-          "return_date": "2026-09-01",
-          "duration_minutes": 1300,
+          "return_date": "2026-09-10",
+          "duration_minutes": 1475,
           "stops": 1,
-          "airline": "United",
-          "airline_code": "UA",
-          "flight_number": "UA 274",
+          "airline": "JAL",
+          "airline_code": "JL",
+          "flight_number": "JL 57",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:07:51Z",
-          "is_preferred": false
-        },
-        {
-          "id": "serpapi::trip2::2026-08-17::UA::UA274::2026-09-07",
-          "trip_id": "trip2",
-          "origin": "SFO",
-          "destination": "DEL",
-          "price_per_person": 2323.0,
-          "total_price": 2323.0,
-          "outbound_date": "2026-08-17",
-          "return_date": "2026-09-07",
-          "duration_minutes": 1300,
-          "stops": 1,
-          "airline": "United",
-          "airline_code": "UA",
-          "flight_number": "UA 274",
-          "url": "https://www.google.com/travel/flights",
-          "source": "google_flights",
-          "scanned_at": "2026-07-13T12:08:01Z",
+          "scanned_at": "2026-07-20T11:46:44Z",
           "is_preferred": false
         },
         {
@@ -199,7 +195,26 @@
           "flight_number": "UA 274",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:08:05Z",
+          "scanned_at": "2026-07-20T11:46:40Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip2::2026-08-17::UA::UA274::2026-09-10",
+          "trip_id": "trip2",
+          "origin": "SFO",
+          "destination": "DEL",
+          "price_per_person": 2323.0,
+          "total_price": 2323.0,
+          "outbound_date": "2026-08-17",
+          "return_date": "2026-09-10",
+          "duration_minutes": 1300,
+          "stops": 1,
+          "airline": "United",
+          "airline_code": "UA",
+          "flight_number": "UA 274",
+          "url": "https://www.google.com/travel/flights",
+          "source": "google_flights",
+          "scanned_at": "2026-07-20T11:46:44Z",
           "is_preferred": false
         },
         {
@@ -218,7 +233,7 @@
           "flight_number": "SQ 33",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:07:51Z",
+          "scanned_at": "2026-07-20T11:46:28Z",
           "is_preferred": true
         },
         {
@@ -237,7 +252,7 @@
           "flight_number": "SQ 33",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:07:58Z",
+          "scanned_at": "2026-07-20T11:46:34Z",
           "is_preferred": true
         },
         {
@@ -256,37 +271,14 @@
           "flight_number": "SQ 33",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-13T12:08:05Z",
+          "scanned_at": "2026-07-20T11:46:40Z",
           "is_preferred": true
-        },
-        {
-          "id": "serpapi::trip2::2026-08-17::UA::UA274::2026-09-05",
-          "trip_id": "trip2",
-          "origin": "SFO",
-          "destination": "DEL",
-          "price_per_person": 2346.0,
-          "total_price": 2346.0,
-          "outbound_date": "2026-08-17",
-          "return_date": "2026-09-05",
-          "duration_minutes": 1300,
-          "stops": 1,
-          "airline": "United",
-          "airline_code": "UA",
-          "flight_number": "UA 274",
-          "url": "https://www.google.com/travel/flights",
-          "source": "google_flights",
-          "scanned_at": "2026-07-13T12:07:59Z",
-          "is_preferred": false
         }
       ],
       "prev_price": 3681.0,
       "price_drop_pct": 0.0,
       "alert": false,
       "price_history": [
-        {
-          "scanned_at": "2026-06-15T15:17:22Z",
-          "best_price": 3681.0
-        },
         {
           "scanned_at": "2026-06-22T14:43:12Z",
           "best_price": 3681.0
@@ -302,10 +294,14 @@
         {
           "scanned_at": "2026-07-13T12:08:07Z",
           "best_price": 3681.0
+        },
+        {
+          "scanned_at": "2026-07-20T11:46:44Z",
+          "best_price": 3681.0
         }
       ],
       "errors": [],
-      "scanned_at": "2026-07-13T12:08:07Z"
+      "scanned_at": "2026-07-20T11:46:44Z"
     }
   ]
 }
