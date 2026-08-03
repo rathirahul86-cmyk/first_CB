@@ -1,5 +1,5 @@
 {
-  "last_scan": "2026-07-27 12:25 UTC",
+  "last_scan": "2026-08-03 12:25 UTC",
   "trip_count": 2,
   "alert_count": 0,
   "trips": [
@@ -21,10 +21,6 @@
       "alert": false,
       "price_history": [
         {
-          "scanned_at": "2026-06-29T13:08:33Z",
-          "best_price": 3865.0
-        },
-        {
           "scanned_at": "2026-07-06T12:49:46Z",
           "best_price": 5786.0
         }
@@ -45,7 +41,7 @@
         "Fetch failed for 2026-07-05/None: 400 Client Error: Bad Request for url: https://serpapi.com/search?engine=google_flights&api_key=064fa88f719bebb933ca2ee80b723e6e9c4fbc3beeaee445c5ae403994a6ce60&departure_id=DEL&arrival_id=SFO&outbound_date=2026-07-05&adults=2&travel_class=2&type=2&currency=USD&hl=en",
         "Fetch failed for 2026-07-10/None: 400 Client Error: Bad Request for url: https://serpapi.com/search?engine=google_flights&api_key=064fa88f719bebb933ca2ee80b723e6e9c4fbc3beeaee445c5ae403994a6ce60&departure_id=DEL&arrival_id=SFO&outbound_date=2026-07-10&adults=2&travel_class=2&type=2&currency=USD&hl=en"
       ],
-      "scanned_at": "2026-07-27T12:24:52Z"
+      "scanned_at": "2026-08-03T12:25:41Z"
     },
     {
       "trip_id": "trip2",
@@ -76,27 +72,46 @@
         "flight_number": "EK 226",
         "url": "https://www.google.com/travel/flights",
         "source": "google_flights",
-        "scanned_at": "2026-07-27T12:24:59Z",
+        "scanned_at": "2026-08-03T12:25:43Z",
         "is_preferred": true
       },
       "candidates": [
         {
-          "id": "serpapi::trip2::2026-08-17::AZ::AZ641::2026-09-01",
+          "id": "serpapi::trip2::2026-08-17::BA::BA284::2026-09-09",
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2098.0,
-          "total_price": 2098.0,
+          "price_per_person": 2068.0,
+          "total_price": 2068.0,
           "outbound_date": "2026-08-17",
-          "return_date": "2026-09-01",
-          "duration_minutes": 1285,
+          "return_date": "2026-09-09",
+          "duration_minutes": 1615,
           "stops": 1,
-          "airline": "ITA",
-          "airline_code": "AZ",
-          "flight_number": "AZ 641",
+          "airline": "British Airways",
+          "airline_code": "BA",
+          "flight_number": "BA 284",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:24:59Z",
+          "scanned_at": "2026-08-03T12:25:52Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip2::2026-08-17::BA::BA284::2026-09-03",
+          "trip_id": "trip2",
+          "origin": "SFO",
+          "destination": "DEL",
+          "price_per_person": 2193.0,
+          "total_price": 2193.0,
+          "outbound_date": "2026-08-17",
+          "return_date": "2026-09-03",
+          "duration_minutes": 1615,
+          "stops": 1,
+          "airline": "British Airways",
+          "airline_code": "BA",
+          "flight_number": "BA 284",
+          "url": "https://www.google.com/travel/flights",
+          "source": "google_flights",
+          "scanned_at": "2026-08-03T12:25:46Z",
           "is_preferred": false
         },
         {
@@ -104,8 +119,8 @@
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2205.0,
-          "total_price": 2205.0,
+          "price_per_person": 2230.0,
+          "total_price": 2230.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-09",
           "duration_minutes": 1326,
@@ -115,45 +130,7 @@
           "flight_number": "AA 16",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:25:12Z",
-          "is_preferred": false
-        },
-        {
-          "id": "serpapi::trip2::2026-08-17::JL::JL1::2026-09-07",
-          "trip_id": "trip2",
-          "origin": "SFO",
-          "destination": "DEL",
-          "price_per_person": 2267.0,
-          "total_price": 2267.0,
-          "outbound_date": "2026-08-17",
-          "return_date": "2026-09-07",
-          "duration_minutes": 2355,
-          "stops": 1,
-          "airline": "JAL",
-          "airline_code": "JL",
-          "flight_number": "JL 1",
-          "url": "https://www.google.com/travel/flights",
-          "source": "google_flights",
-          "scanned_at": "2026-07-27T12:25:10Z",
-          "is_preferred": false
-        },
-        {
-          "id": "serpapi::trip2::2026-08-17::JL::JL1::2026-09-10",
-          "trip_id": "trip2",
-          "origin": "SFO",
-          "destination": "DEL",
-          "price_per_person": 2267.0,
-          "total_price": 2267.0,
-          "outbound_date": "2026-08-17",
-          "return_date": "2026-09-10",
-          "duration_minutes": 2355,
-          "stops": 1,
-          "airline": "JAL",
-          "airline_code": "JL",
-          "flight_number": "JL 1",
-          "url": "https://www.google.com/travel/flights",
-          "source": "google_flights",
-          "scanned_at": "2026-07-27T12:25:14Z",
+          "scanned_at": "2026-08-03T12:25:52Z",
           "is_preferred": false
         },
         {
@@ -161,8 +138,8 @@
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2269.0,
-          "total_price": 2269.0,
+          "price_per_person": 2270.0,
+          "total_price": 2270.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-01",
           "duration_minutes": 1475,
@@ -172,7 +149,7 @@
           "flight_number": "JL 57",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:24:59Z",
+          "scanned_at": "2026-08-03T12:25:43Z",
           "is_preferred": false
         },
         {
@@ -180,8 +157,8 @@
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2269.0,
-          "total_price": 2269.0,
+          "price_per_person": 2270.0,
+          "total_price": 2270.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-07",
           "duration_minutes": 1475,
@@ -191,26 +168,26 @@
           "flight_number": "JL 57",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:25:10Z",
+          "scanned_at": "2026-08-03T12:25:50Z",
           "is_preferred": false
         },
         {
-          "id": "serpapi::trip2::2026-08-17::AA::AA16::2026-09-01",
+          "id": "serpapi::trip2::2026-08-17::JL::JL57::2026-09-10",
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2323.0,
-          "total_price": 2323.0,
+          "price_per_person": 2270.0,
+          "total_price": 2270.0,
           "outbound_date": "2026-08-17",
-          "return_date": "2026-09-01",
-          "duration_minutes": 1326,
+          "return_date": "2026-09-10",
+          "duration_minutes": 1475,
           "stops": 1,
-          "airline": "American",
-          "airline_code": "AA",
-          "flight_number": "AA 16",
+          "airline": "JAL",
+          "airline_code": "JL",
+          "flight_number": "JL 57",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:24:59Z",
+          "scanned_at": "2026-08-03T12:25:54Z",
           "is_preferred": false
         },
         {
@@ -218,8 +195,8 @@
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2323.0,
-          "total_price": 2323.0,
+          "price_per_person": 2280.0,
+          "total_price": 2280.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-03",
           "duration_minutes": 1326,
@@ -229,7 +206,26 @@
           "flight_number": "AA 16",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:25:04Z",
+          "scanned_at": "2026-08-03T12:25:46Z",
+          "is_preferred": false
+        },
+        {
+          "id": "serpapi::trip2::2026-08-17::AA::AA16::2026-09-01",
+          "trip_id": "trip2",
+          "origin": "SFO",
+          "destination": "DEL",
+          "price_per_person": 2373.0,
+          "total_price": 2373.0,
+          "outbound_date": "2026-08-17",
+          "return_date": "2026-09-01",
+          "duration_minutes": 1326,
+          "stops": 1,
+          "airline": "American",
+          "airline_code": "AA",
+          "flight_number": "AA 16",
+          "url": "https://www.google.com/travel/flights",
+          "source": "google_flights",
+          "scanned_at": "2026-08-03T12:25:43Z",
           "is_preferred": false
         },
         {
@@ -237,8 +233,8 @@
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2323.0,
-          "total_price": 2323.0,
+          "price_per_person": 2373.0,
+          "total_price": 2373.0,
           "outbound_date": "2026-08-17",
           "return_date": "2026-09-07",
           "duration_minutes": 1326,
@@ -248,26 +244,26 @@
           "flight_number": "AA 16",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:25:10Z",
+          "scanned_at": "2026-08-03T12:25:50Z",
           "is_preferred": false
         },
         {
-          "id": "serpapi::trip2::2026-08-17::UA::UA274::2026-09-09",
+          "id": "serpapi::trip2::2026-08-17::AA::AA16::2026-09-10",
           "trip_id": "trip2",
           "origin": "SFO",
           "destination": "DEL",
-          "price_per_person": 2323.0,
-          "total_price": 2323.0,
+          "price_per_person": 2373.0,
+          "total_price": 2373.0,
           "outbound_date": "2026-08-17",
-          "return_date": "2026-09-09",
-          "duration_minutes": 1300,
+          "return_date": "2026-09-10",
+          "duration_minutes": 1326,
           "stops": 1,
-          "airline": "United",
-          "airline_code": "UA",
-          "flight_number": "UA 274",
+          "airline": "American",
+          "airline_code": "AA",
+          "flight_number": "AA 16",
           "url": "https://www.google.com/travel/flights",
           "source": "google_flights",
-          "scanned_at": "2026-07-27T12:25:12Z",
+          "scanned_at": "2026-08-03T12:25:54Z",
           "is_preferred": false
         }
       ],
@@ -275,10 +271,6 @@
       "price_drop_pct": 0.0,
       "alert": false,
       "price_history": [
-        {
-          "scanned_at": "2026-06-29T13:09:05Z",
-          "best_price": 3681.0
-        },
         {
           "scanned_at": "2026-07-06T12:50:13Z",
           "best_price": 3681.0
@@ -294,10 +286,14 @@
         {
           "scanned_at": "2026-07-27T12:25:14Z",
           "best_price": 3681.0
+        },
+        {
+          "scanned_at": "2026-08-03T12:25:54Z",
+          "best_price": 3681.0
         }
       ],
       "errors": [],
-      "scanned_at": "2026-07-27T12:25:14Z"
+      "scanned_at": "2026-08-03T12:25:54Z"
     }
   ]
 }
